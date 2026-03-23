@@ -2,580 +2,626 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DC BLOX | Indianapolis</title>
-  <meta
-    name="description"
-    content="DC BLOX Indianapolis digital infrastructure project supporting AI, cloud, connectivity, and regional economic growth."
-  />
-
-  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DC BLOX | Indianapolis Community Information</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: #0b1020;
-      color: #f8fafc;
-      scroll-behavior: smooth;
+    :root {
+      --bg: #ffffff; --text: #0f0a1e; --muted: #4b5563;
+      --accent: #e63329; --accent-dark: #b81f16;
+      --navy: #1a0a2e; --navy-mid: #2d1a4a;
+      --card-bg: #ffffff; --radius: 16px; --container: 1240px;
     }
+    html,body { background:var(--bg); color:var(--text); font-family:'Barlow',system-ui,sans-serif; scroll-behavior:smooth; }
+    .container { max-width:var(--container); margin:0 auto; padding:0 1.25rem; }
+    .headline { letter-spacing:-.02em; line-height:1.15; font-family:'Barlow Condensed',sans-serif; }
+    .lead { color:var(--muted); line-height:1.7; font-size:1.0625rem; }
 
-    .container-site {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding-left: 24px;
-      padding-right: 24px;
-    }
+    .btn { display:inline-block; padding:.8rem 1.5rem; border-radius:6px; font-weight:700; transition:all .2s; font-size:.9375rem; font-family:'Barlow',sans-serif; letter-spacing:.02em; text-transform:uppercase; }
+    .btn-red { background:var(--accent); color:#fff; }
+    .btn-red:hover { background:var(--accent-dark); box-shadow:0 4px 20px rgba(230,51,41,.35); transform:translateY(-1px); }
+    .btn-ghost { border:2px solid #d1d5db; background:transparent; color:var(--text); }
+    .btn-ghost:hover { border-color:var(--accent); color:var(--accent); }
+    .btn-outline-white { border:2px solid rgba(255,255,255,.3); background:transparent; color:#fff; }
+    .btn-outline-white:hover { border-color:#fff; }
 
-    .hero-bg {
-      background:
-        linear-gradient(rgba(7, 10, 20, 0.75), rgba(7, 10, 20, 0.85)),
-        url('hero-background.jpg') center/cover no-repeat;
-    }
+    .pro-card { background:var(--card-bg); border:1px solid rgba(0,0,0,.08); border-radius:var(--radius); box-shadow:0 4px 20px rgba(0,0,0,.05); transition:all .3s cubic-bezier(.4,0,.2,1); }
+    .pro-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(0,0,0,.1); }
 
-    .section-dark {
-      background: #0b1020;
-    }
+    #sticky-shell { position:sticky; top:0; z-index:80; background:#fff; }
+    .top-banner { background:var(--navy); color:#fff; text-align:center; padding:10px 16px; font-weight:800; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+    header { background:rgba(255,255,255,.97); backdrop-filter:blur(10px); border-bottom:1px solid rgba(0,0,0,.06); transition:box-shadow .3s; }
+    header.scrolled { box-shadow:0 2px 12px rgba(0,0,0,.08); }
+    nav a { position:relative; padding-bottom:2px; font-weight:600; font-size:.875rem; text-transform:uppercase; letter-spacing:.04em; color:var(--text); transition:color .2s; }
+    nav a:hover { color:var(--accent); }
+    nav a::after { content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0; background:var(--accent); transition:width .2s; }
+    nav a:hover::after { width:100%; }
+    .logo-mark { color:var(--accent); font-family:'Barlow Condensed',sans-serif; font-weight:900; font-size:1.5rem; }
+    .logo-sub { font-size:.75rem; font-weight:600; color:var(--muted); letter-spacing:.06em; text-transform:uppercase; }
 
-    .section-mid {
-      background: #11182d;
-    }
+    .hero { position:relative; overflow:hidden; background:var(--navy); min-height:620px; display:flex; align-items:flex-end; padding:0; }
+    .hero-bg { position:absolute; inset:0; background:linear-gradient(135deg,#1a0a2e 0%,#2d1a4a 40%,#1a0a2e 100%); }
+    .hero-grid { position:absolute; inset:0; opacity:.06; background-image:linear-gradient(rgba(230,51,41,.6) 1px,transparent 1px),linear-gradient(90deg,rgba(230,51,41,.6) 1px,transparent 1px); background-size:60px 60px; }
+    .hero-glow { position:absolute; width:600px; height:600px; background:radial-gradient(circle,rgba(230,51,41,.18) 0%,transparent 70%); top:-100px; right:-100px; pointer-events:none; }
+    .hero__content { position:relative; z-index:2; width:100%; padding-top:5rem; padding-bottom:5rem; }
+    .hero-glass { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); backdrop-filter:blur(16px); border-radius:var(--radius); padding:2.5rem 2.8rem; max-width:860px; }
+    @media(max-width:768px){ .hero-glass{padding:1.75rem;} .hero{min-height:500px;} }
 
-    .section-light {
-      background: #f8fafc;
-      color: #0f172a;
-    }
+    section { padding-top:5.5rem; padding-bottom:5.5rem; }
+    @media(max-width:768px){ section{padding-top:4rem;padding-bottom:4rem;} }
 
-    .glass {
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
+    .section-eyebrow { font-size:.75rem; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:var(--accent); margin-bottom:.5rem; }
+    .phase-badge { display:inline-block; background:var(--accent); color:#fff; font-size:.7rem; font-weight:800; text-transform:uppercase; letter-spacing:.08em; padding:.2rem .6rem; border-radius:4px; margin-bottom:.75rem; }
 
-    .card-dark {
-      background: #121a31;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
+    .myth-card { border-radius:var(--radius); padding:1.75rem; border:1px solid #e5e7eb; background:#fff; height:100%; }
+    .myth-label { font-weight:800; font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); margin-bottom:.4rem; }
+    .answer-label { font-weight:800; font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:#065f46; margin-top:1rem; margin-bottom:.4rem; }
 
-    .card-light {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-    }
+    .faq-item { border-bottom:1px solid #e5e7eb; padding:1.25rem 0; }
+    .faq-q { cursor:pointer; display:flex; justify-content:space-between; align-items:center; font-weight:700; font-size:1.0625rem; gap:1rem; }
+    .faq-a { max-height:0; overflow:hidden; transition:max-height .4s ease; }
+    .faq-item.open .faq-a { max-height:1000px; padding-top:1rem; }
+    .faq-q span { transition:transform .3s; font-size:1.5rem; font-weight:400; color:var(--accent); flex-shrink:0; }
+    .faq-item.open .faq-q span { transform:rotate(45deg); }
 
-    .eyebrow {
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      font-weight: 700;
-    }
+    .timeline-item { position:relative; padding-left:2.75rem; padding-bottom:2.5rem; border-left:2px solid #e5e7eb; }
+    .timeline-item:last-child { border-left:none; padding-bottom:0; }
+    .timeline-dot { position:absolute; left:-7px; top:6px; width:14px; height:14px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 5px rgba(230,51,41,.15); }
+    .timeline-year { font-weight:900; font-size:1.125rem; color:var(--accent); font-family:'Barlow Condensed',sans-serif; margin-bottom:.4rem; }
 
-    .accent-red {
-      color: #ef4444;
-    }
+    .article-card { display:block; padding:1.75rem; background:#fff; border:1px solid #e5e7eb; border-radius:12px; transition:all .3s; height:100%; }
+    .article-card:hover { border-color:var(--accent); box-shadow:0 10px 30px rgba(230,51,41,.12); transform:translateY(-3px); }
+    .article-source { font-size:.75rem; text-transform:uppercase; letter-spacing:.08em; color:var(--accent); font-weight:700; margin-bottom:.6rem; }
+    .article-title { font-weight:800; font-size:1.0625rem; line-height:1.4; margin-bottom:.6rem; }
+    .article-excerpt { font-size:.9375rem; color:var(--muted); line-height:1.65; }
 
-    .accent-bg {
-      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-    }
+    .multiplier-visual { display:flex; align-items:center; justify-content:center; gap:2rem; flex-wrap:wrap; padding:2.5rem; background:linear-gradient(135deg,#fff0ef 0%,#f0ebff 100%); border-radius:var(--radius); }
+    .multiplier-box { background:#fff; padding:2rem 1.5rem; border-radius:12px; text-align:center; min-width:160px; box-shadow:0 6px 20px rgba(0,0,0,.08); }
 
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 9999px;
-      padding: 14px 24px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      background: #ef4444;
-      color: white;
-      text-decoration: none;
-    }
+    .quote-block { border-left:4px solid var(--accent); padding-left:1.5rem; margin:1.5rem 0; }
 
-    .btn-primary:hover {
-      background: #dc2626;
-      transform: translateY(-1px);
-    }
+    .fade-up { opacity:0; transform:translateY(16px); transition:all .7s ease; }
+    .fade-up.show { opacity:1; transform:translateY(0); }
 
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 9999px;
-      padding: 14px 24px;
-      font-weight: 700;
-      transition: 0.2s ease;
-      border: 1px solid rgba(255,255,255,0.18);
-      color: white;
-      background: rgba(255,255,255,0.04);
-      text-decoration: none;
-    }
+    #backToTop { position:fixed; bottom:32px; right:32px; background:var(--accent); color:#fff; border-radius:8px; padding:.75rem 1rem; font-weight:800; opacity:0; pointer-events:none; transform:translateY(10px); transition:all .3s; z-index:40; font-size:1.125rem; }
+    #backToTop.show { opacity:1; pointer-events:auto; transform:translateY(0); }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.08);
-      transform: translateY(-1px);
-    }
+    .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:8px; }
+    @media(max-width:768px){ .hamburger{display:flex;} }
+    .hamburger span { width:26px; height:2.5px; background:currentColor; transition:all .3s; border-radius:2px; }
+    .hamburger.open span:nth-child(1){ transform:rotate(45deg) translate(7px,7px); }
+    .hamburger.open span:nth-child(2){ opacity:0; }
+    .hamburger.open span:nth-child(3){ transform:rotate(-45deg) translate(7px,-7px); }
+    .mobile-nav { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(26,10,46,.97); z-index:90; padding:5rem 2rem; overflow-y:auto; }
+    .mobile-nav.open { display:block; }
+    .mobile-nav a { display:block; padding:1rem 0; border-bottom:1px solid rgba(255,255,255,.1); font-weight:700; font-size:1.125rem; color:#fff; text-transform:uppercase; letter-spacing:.04em; }
+    .mobile-close { position:absolute; top:1.5rem; right:1.5rem; color:#fff; font-size:2rem; cursor:pointer; background:none; border:none; }
 
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .img-frame {
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      background: #0f172a;
-    }
-
-    .img-frame img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .anchor-offset {
-      scroll-margin-top: 100px;
-    }
-
-    .faq-item summary {
-      list-style: none;
-      cursor: pointer;
-    }
-
-    .faq-item summary::-webkit-details-marker {
-      display: none;
-    }
+    .form-input { width:100%; padding:.75rem 1rem; border:1px solid #e5e7eb; border-radius:8px; font-size:1rem; font-family:'Barlow',sans-serif; transition:border-color .2s; }
+    .form-input:focus { outline:none; border-color:var(--accent); }
+    .form-textarea { min-height:120px; resize:vertical; }
+    footer { background:var(--navy); color:rgba(255,255,255,.85); padding:3.5rem 0; }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#0b1020]/90 backdrop-blur border-b border-white/10">
-    <div class="container-site py-4 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-3 no-underline text-white">
-        <div class="w-10 h-10 rounded-lg accent-bg flex items-center justify-center font-extrabold text-white">
-          DC
-        </div>
-        <div>
-          <div class="font-extrabold tracking-wide">DC BLOX</div>
-          <div class="text-xs text-slate-400">Indianapolis</div>
-        </div>
-      </a>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-200">
-        <a href="#overview" class="hover:text-white">Overview</a>
-        <a href="#drivers" class="hover:text-white">Why It Matters</a>
-        <a href="#project" class="hover:text-white">Project</a>
-        <a href="#community" class="hover:text-white">Community</a>
-        <a href="#faq" class="hover:text-white">FAQ</a>
-        <a href="#video" class="hover:text-white">Video</a>
+<div id="sticky-shell">
+  <div class="top-banner">DC BLOX Indianapolis • Powering the Future of Indianapolis Digital Infrastructure</div>
+  <div style="background:#f3f0ff;border-bottom:1px solid #e5e7eb;">
+    <div class="container" style="padding:10px 16px;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
+      <div style="font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);">DATA CENTERS BRING LOWER TRAFFIC, STRONGER TAX BASE, AND HIGH-WAGE JOBS VS. TYPICAL INDUSTRIAL USES</div>
+      <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+        <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" style="color:#1e40af;font-weight:600;text-decoration:underline;">AES Indiana Rate Statement</a>
+        <span style="color:#9ca3af;">•</span>
+        <a href="#project-overview" style="color:#1e40af;font-weight:600;text-decoration:underline;">Project Details</a>
+      </div>
+    </div>
+  </div>
+  <header id="topbar">
+    <div class="container flex items-center gap-4 py-4">
+      <div class="flex flex-col">
+        <div class="logo-mark">⬡ DC BLOX</div>
+        <div class="logo-sub">Indianapolis Campus</div>
+      </div>
+      <nav class="hidden md:flex gap-5 text-sm ml-auto items-center">
+        <a href="#myth-busters">Key Questions</a>
+        <a href="#aes-commitment">AES & Rates</a>
+        <a href="#economic-impact">Economic Impact</a>
+        <a href="#about-dcblox">About DC BLOX</a>
+        <a href="#project-overview">Project Details</a>
+        <a href="#community">Community</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <div class="hamburger md:hidden ml-auto" id="hamburger"><span></span><span></span><span></span></div>
     </div>
   </header>
+</div>
 
-  <!-- Hero -->
-  <section id="top" class="hero-bg">
-    <div class="container-site py-24 md:py-32">
-      <div class="max-w-3xl">
-        <div class="eyebrow text-red-400 mb-5">DC BLOX Introduction Indianapolis</div>
-        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-          Digital Infrastructure for the Next Generation of Growth
-        </h1>
-        <p class="text-lg md:text-xl text-slate-200 max-w-2xl mb-8">
-          DC BLOX is a vertically integrated digital infrastructure provider focused on data centers, connectivity, and the systems that support AI, cloud, and modern digital life.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <a href="#project" class="btn-primary">Explore the Project</a>
-          <a href="#video" class="btn-secondary">Watch Presentation</a>
-        </div>
-      </div>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="closeNav">✕</button>
+  <a href="#myth-busters">Key Questions</a>
+  <a href="#aes-commitment">AES & Rates</a>
+  <a href="#economic-impact">Economic Impact</a>
+  <a href="#about-dcblox">About DC BLOX</a>
+  <a href="#project-overview">Project Details</a>
+  <a href="#community">Community</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact">Contact</a>
+</div>
 
-      <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
-        <div class="glass rounded-3xl p-6">
-          <div class="stat-number">AI</div>
-          <div class="text-slate-300 mt-2">Growing compute demand is driving the need for new infrastructure</div>
-        </div>
-        <div class="glass rounded-3xl p-6">
-          <div class="stat-number">Cloud</div>
-          <div class="text-slate-300 mt-2">Regional capacity helps bring services closer to users and businesses</div>
-        </div>
-        <div class="glass rounded-3xl p-6">
-          <div class="stat-number">Connectivity</div>
-          <div class="text-slate-300 mt-2">Data centers and fiber networks support the digital economy</div>
-        </div>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div><div class="hero-grid"></div><div class="hero-glow"></div>
+  <div class="hero__content container">
+    <div class="hero-glass fade-up">
+      <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">Community Information</div>
+      <h1 class="headline" style="font-size:clamp(2.25rem,5vw,3.75rem);color:#fff;font-weight:900;">Reliable Technology. Responsible Growth.<br>Real Benefits for Indianapolis.</h1>
+      <p style="color:rgba(255,255,255,.7);line-height:1.7;font-size:1.0625rem;margin-top:1rem;max-width:680px;">Existing customer rates are not expected to be negatively impacted. Phase I uses a waterless cooling system with no utility water consumed. Daily traffic is far below typical industrial alternatives. High-wage local jobs and meaningful long-term tax contributions to the community.</p>
+      <div style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem;">
+        <a href="#myth-busters" class="btn btn-red">Common Questions Answered</a>
+        <a href="#economic-impact" class="btn btn-outline-white">Economic Benefits</a>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
-  <!-- Overview -->
-  <section id="overview" class="section-dark anchor-offset">
-    <div class="container-site py-20 md:py-28">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- KEY FACTS STRIP -->
+<div style="background:var(--navy);">
+  <div class="container">
+    <div class="grid md:grid-cols-3" style="border-top:1px solid rgba(255,255,255,.08);">
+      <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Traffic & Noise</div>
+        <div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Dramatically fewer daily vehicle trips than a typical warehouse or distribution facility on the same site</div>
+      </div>
+      <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,.08);">
+        <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Water Use</div>
+        <div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Phase I: DX waterless cooling — zero utility water consumed during normal operations</div>
+      </div>
+      <div style="padding:1.75rem 2rem;">
+        <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Local Jobs</div>
+        <div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Every direct data center job creates approximately 6 additional jobs in the local economy</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MYTH BUSTERS -->
+<section id="myth-busters" class="container">
+  <div class="text-center mb-12 fade-up">
+    <div class="section-eyebrow">Straight Answers</div>
+    <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">Common Questions & Answers</h2>
+    <p class="lead mt-3 max-w-3xl mx-auto">The questions we hear most from Indianapolis residents — answered directly and honestly.</p>
+  </div>
+  <div class="grid md:grid-cols-2 gap-6">
+
+    <div class="myth-card fade-up">
+      <div class="myth-label">Question</div>
+      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Won't my power bill go up because of this?"</p>
+      <div class="answer-label">Answer</div>
+      <p class="lead" style="font-size:.9375rem;">No. In fact, additional power consumed by DC BLOX could put <strong>downward pressure on rates</strong> by adding more MWh to the revenue requirement used to set rates for all customers. DC BLOX pays for all the power it uses at regulated rates and covers 100% of all incremental direct interconnection costs for the additional power needed. AES Indiana has also publicly committed to the public utilities commission <strong>not to charge regular ratepayers</strong> for the costs of supporting increased demand from data centers.</p>
+      <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="inline-block mt-4 text-sm font-semibold underline" style="color:var(--accent);">Read the AES Indiana public statement →</a>
+    </div>
+
+    <div class="myth-card fade-up">
+      <div class="myth-label">Question</div>
+      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Will these data centers impact our water resources?"</p>
+      <div class="answer-label">Answer</div>
+      <p class="lead" style="font-size:.9375rem;">No. Phase I is built with a <strong>state-of-the-art DX waterless cooling system</strong> — no utility water is consumed during normal operations. For the larger Phase II buildings, a <strong>hybrid air/closed-loop water system</strong> recirculates water internally, requiring no additional utility water once initially primed. No waste water is expelled into the environment.</p>
+    </div>
+
+    <div class="myth-card fade-up">
+      <div class="myth-label">Question</div>
+      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Aren't there health risks from living near a data center?"</p>
+      <div class="answer-label">Answer</div>
+      <p class="lead" style="font-size:.9375rem;">No. DC BLOX data centers use <strong>no hazardous materials</strong> and produce no environmental waste. Diesel generators run only when utility power is unavailable and for monthly testing — not enough to impact local air quality. Data centers may emit minor electromagnetic fields (EMFs), but concrete walls substantially reduce emissions. The remaining EMFs are no greater than those from a typical office building.</p>
+    </div>
+
+    <div class="myth-card fade-up">
+      <div class="myth-label">Question</div>
+      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Will this actually help Indianapolis residents?"</p>
+      <div class="answer-label">Answer</div>
+      <p class="lead" style="font-size:.9375rem;">Yes. Substantial <strong>tax revenues</strong> will help reduce the burden on residents and can improve schools, police and security, local infrastructure, hospitals, and libraries. Every direct data center job creates approximately <strong>6× that number in indirect jobs</strong> for the local economy. New local fiber networks can also enhance broadband access to underserved communities across Indianapolis.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AES COMMITMENT -->
+<section id="aes-commitment" style="background:var(--navy);">
+  <div class="container">
+    <div class="fade-up text-center mb-12" style="max-width:800px;margin-left:auto;margin-right:auto;">
+      <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem;">From Your Utility Provider</div>
+      <h2 class="headline" style="font-size:clamp(1.75rem,4vw,3rem);font-weight:900;color:#fff;">AES Indiana: Rates Not Expected to Be Negatively Impacted</h2>
+      <p style="color:rgba(255,255,255,.7);line-height:1.7;margin-top:1rem;">AES Indiana — your utility provider — has publicly confirmed that existing customer rates are not expected to be negatively impacted as a result of serving new data center load in Indianapolis.</p>
+    </div>
+    <div class="fade-up" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:2.5rem;">
+      <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;">
+        <div style="width:72px;height:72px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.25rem;font-weight:900;font-family:'Barlow Condensed',sans-serif;flex-shrink:0;">AES</div>
         <div>
-          <div class="eyebrow accent-red mb-4">Company Overview</div>
-          <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
-            A Digital Infrastructure Provider Focused on Growth
-          </h2>
-          <p class="text-slate-300 text-lg leading-8 mb-6">
-            DC BLOX delivers data center and fiber network solutions that help customers grow while supporting regional economic development. The company focuses on the infrastructure needed to power businesses, applications, and digital services across growing markets. :contentReference[oaicite:1]{index=1}
-          </p>
-          <p class="text-slate-300 text-lg leading-8">
-            With a vertically integrated model, DC BLOX supports land acquisition, development, operations, and connectivity for modern digital infrastructure projects. :contentReference[oaicite:2]{index=2}
-          </p>
+          <h3 style="font-size:1.375rem;font-weight:800;color:#fff;">Official Statement — AES Indiana President</h3>
+          <p style="font-size:.875rem;color:rgba(255,255,255,.5);margin-top:.25rem;">Brandi Davis-Handy, AES Indiana President • September 19, 2025</p>
         </div>
-
-        <div class="card-dark rounded-3xl p-8">
-          <h3 class="text-2xl font-bold mb-6">Core Strengths</h3>
-          <div class="grid gap-4">
-            <div class="rounded-2xl bg-white/5 p-5">
-              <div class="font-semibold text-white mb-1">Vertically Integrated Platform</div>
-              <div class="text-slate-300">A development model built around infrastructure delivery, operations, and connectivity</div>
-            </div>
-            <div class="rounded-2xl bg-white/5 p-5">
-              <div class="font-semibold text-white mb-1">Business and Government Relationships</div>
-              <div class="text-slate-300">Strong regional relationships that support project development and growth</div>
-            </div>
-            <div class="rounded-2xl bg-white/5 p-5">
-              <div class="font-semibold text-white mb-1">Scalable Infrastructure</div>
-              <div class="text-slate-300">Data center and network solutions designed to support long-term digital demand</div>
-            </div>
-          </div>
+      </div>
+      <div class="quote-block">
+        <p style="font-style:italic;color:rgba(255,255,255,.85);font-size:1.0625rem;line-height:1.7;">"We've developed a strategy that shows <strong style="color:#fff;">no negative impact to existing customer rates</strong> should AES Indiana power data centers in the future. This is possible because, even though more investments are required to serve those customers, <strong style="color:#fff;">we will be able to spread our costs over a larger amount of electricity sold.</strong>"</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5 mt-8">
+        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);">
+          <h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">DC BLOX Pays Its Share</h4>
+          <p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">DC BLOX's rate structure directly covers all incremental direct interconnection costs for the additional power needed. No infrastructure cost is passed to existing customers.</p>
         </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);">
+          <h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">Cost-Spreading Benefit</h4>
+          <p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">Adding large data center load increases total MWh sold, spreading fixed infrastructure costs across more electricity — which can put downward pressure on per-unit rates for all customers.</p>
+        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);">
+          <h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">Public Oversight</h4>
+          <p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">AES Indiana's commitments go through the Indiana Utility Regulatory Commission (IURC) — a public process ensuring full transparency and accountability for all rate decisions.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2rem;">
+        <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="btn btn-red">Read the Full AES Indiana Statement</a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Values -->
-  <section class="section-mid">
-    <div class="container-site py-20 md:py-28">
-      <div class="max-w-3xl mb-12">
-        <div class="eyebrow accent-red mb-4">Core Values</div>
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
-          Trust, Teamwork, and Tenacity
-        </h2>
+<!-- ECONOMIC IMPACT -->
+<section id="economic-impact" class="container">
+  <div class="text-center mb-12 fade-up">
+    <div class="section-eyebrow">Real Numbers</div>
+    <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">Real Economic Benefits for Indianapolis</h2>
+    <p class="lead mt-3 max-w-3xl mx-auto">Data centers are proven economic drivers — generating substantial tax revenue, high-paying local jobs, and improved community services with minimal impact on roads and neighborhoods.</p>
+  </div>
+
+  <div class="fade-up">
+    <h3 class="headline text-center mb-8" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">The Job Multiplier Effect</h3>
+    <div class="multiplier-visual">
+      <div class="multiplier-box">
+        <div style="font-size:3rem;font-weight:900;color:var(--accent);line-height:1;font-family:'Barlow Condensed',sans-serif;">1</div>
+        <div style="font-weight:700;font-size:.9375rem;margin-top:.75rem;line-height:1.4;">Direct Data<br>Center Job</div>
       </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card-dark rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3">Trust</h3>
-          <p class="text-slate-300">
-            Earning the respect of communities, customers, and partners through strong relationships and accountability. :contentReference[oaicite:3]{index=3}
-          </p>
-        </div>
-        <div class="card-dark rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3">Teamwork</h3>
-          <p class="text-slate-300">
-            Success depends on collaboration with customers, partners, investors, local leaders, and government stakeholders. :contentReference[oaicite:4]{index=4}
-          </p>
-        </div>
-        <div class="card-dark rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3">Tenacity</h3>
-          <p class="text-slate-300">
-            A shared mission and long-term commitment to building infrastructure that makes a difference. :contentReference[oaicite:5]{index=5}
-          </p>
-        </div>
+      <div style="font-size:2.5rem;color:var(--accent);font-weight:900;">→</div>
+      <div class="multiplier-box">
+        <div style="font-size:3rem;font-weight:900;color:var(--navy);line-height:1;font-family:'Barlow Condensed',sans-serif;">6×</div>
+        <div style="font-weight:700;font-size:.9375rem;margin-top:.75rem;line-height:1.4;">Indirect Jobs<br>Created Locally</div>
       </div>
     </div>
-  </section>
+    <p class="lead text-center mt-6 max-w-3xl mx-auto">These indirect jobs span telecommunications, construction, software development, facilities maintenance, security, and the local businesses — restaurants, retail, professional services — that support data center operations and employees.</p>
+    <p style="text-align:center;font-size:.8125rem;color:var(--muted);margin-top:.5rem;">Source: PwC data center industry research</p>
+  </div>
 
-  <!-- Demand Drivers -->
-  <section id="drivers" class="section-light anchor-offset">
-    <div class="container-site py-20 md:py-28">
-      <div class="max-w-3xl mb-12">
-        <div class="eyebrow text-red-600 mb-4">Why It Matters</div>
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
-          What Is Driving the Need for New Digital Infrastructure?
-        </h2>
-        <p class="text-slate-700 text-lg leading-8">
-          Demand is being driven by artificial intelligence, cloud services, internet-connected devices, social media, streaming, and the broader digital transformation of businesses and communities. :contentReference[oaicite:6]{index=6}
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card-light rounded-3xl p-6">
-          <div class="text-xl font-bold mb-3 text-slate-900">Internet of Things</div>
-          <p class="text-slate-700">Connected devices continue increasing demand for fast, reliable infrastructure.</p>
-        </div>
-        <div class="card-light rounded-3xl p-6">
-          <div class="text-xl font-bold mb-3 text-slate-900">Artificial Intelligence / Cloud</div>
-          <p class="text-slate-700">AI and cloud platforms require major infrastructure growth and capacity. :contentReference[oaicite:7]{index=7}</p>
-        </div>
-        <div class="card-light rounded-3xl p-6">
-          <div class="text-xl font-bold mb-3 text-slate-900">Social Media / Streaming</div>
-          <p class="text-slate-700">Digital content consumption continues to accelerate across industries and users.</p>
-        </div>
-        <div class="card-light rounded-3xl p-6">
-          <div class="text-xl font-bold mb-3 text-slate-900">Digital Transformation</div>
-          <p class="text-slate-700">Businesses and public services are increasingly powered by digital systems.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hyperscalers -->
-  <section class="section-dark">
-    <div class="container-site py-20 md:py-28">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
+  <div class="mt-16 fade-up">
+    <h3 class="headline mb-6" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">How Tax Revenue Benefits Indianapolis</h3>
+    <div class="pro-card p-8">
+      <div class="grid md:grid-cols-2 gap-8">
         <div>
-          <div class="eyebrow accent-red mb-4">Industry Momentum</div>
-          <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
-            Hyperscalers Are Expanding Infrastructure
-          </h2>
-          <p class="text-slate-300 text-lg leading-8 mb-6">
-            Major digital platforms are continuing to invest in new infrastructure to bring services closer to users, support AI growth, and expand network capacity where demand is highest. :contentReference[oaicite:8]{index=8}
-          </p>
-          <div class="grid grid-cols-2 gap-4 text-slate-300">
-            <div class="card-dark rounded-2xl p-4">Closer to users and businesses</div>
-            <div class="card-dark rounded-2xl p-4">Massive growth to support AI</div>
-            <div class="card-dark rounded-2xl p-4">New network capacity</div>
-            <div class="card-dark rounded-2xl p-4">Investment in future economies</div>
-          </div>
+          <h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Schools</h4>
+          <p class="lead">Property and equipment tax contributions flow directly to school district funding — enabling improved facilities, better programs, and competitive salaries without increasing residential property taxes.</p>
         </div>
-
-        <div class="card-dark rounded-3xl p-8">
-          <h3 class="text-2xl font-bold mb-5">Digital Infrastructure Needed</h3>
-          <ul class="space-y-4 text-slate-300">
-            <li>Data Centers</li>
-            <li>Power</li>
-            <li>New Fiber Networks</li>
-            <li>5G / 6G Mobile</li>
-            <li>Subsea Cable Connectivity</li>
-          </ul>
-          <p class="text-slate-400 mt-6">
-            These infrastructure layers work together to support economic growth and digital access. :contentReference[oaicite:9]{index=9}
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What is a data center -->
-  <section class="section-light">
-    <div class="container-site py-20 md:py-28">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
-          <div class="eyebrow text-red-600 mb-4">Data Center Basics</div>
-          <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
-            What Is a Data Center?
-          </h2>
-          <p class="text-slate-700 text-lg leading-8 mb-5">
-            A data center is the physical building that houses the computers and software systems powering the digital world. It supports everything from streaming services and online banking to AI and enterprise systems. :contentReference[oaicite:10]{index=10}
-          </p>
-          <p class="text-slate-700 text-lg leading-8">
-            As cloud and AI continue to grow, more data centers are needed closer to users and businesses. :contentReference[oaicite:11]{index=11}
-          </p>
+          <h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Public Safety & Services</h4>
+          <p class="lead">Tax revenues fund police and security, fire departments, hospitals, libraries, and other essential public services that Indianapolis residents rely on every day.</p>
         </div>
-
-        <div class="card-light rounded-3xl p-8">
-          <h3 class="text-2xl font-bold mb-5 text-slate-900">Everyday Uses of Digital Infrastructure</h3>
-          <ul class="space-y-4 text-slate-700">
-            <li><strong>Everyday human activity:</strong> communication, entertainment, social media, online learning</li>
-            <li><strong>Business operations:</strong> productivity, collaboration, CRM, ERP, and HR systems</li>
-            <li><strong>Ecommerce and payments:</strong> digital wallets, payment networks, fraud detection</li>
-            <li><strong>Public services:</strong> healthcare, transportation, utilities, emergency services</li>
-            <li><strong>Industry and innovation:</strong> research, manufacturing, and agriculture :contentReference[oaicite:12]{index=12}</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Offerings -->
-  <section class="section-dark">
-    <div class="container-site py-20 md:py-28">
-      <div class="max-w-3xl mb-12">
-        <div class="eyebrow accent-red mb-4">Offerings</div>
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
-          DC BLOX Offerings
-        </h2>
-        <p class="text-slate-300 text-lg leading-8">
-          DC BLOX provides data center and fiber network solutions designed to enable customer growth and accelerate regional economic development. :contentReference[oaicite:13]{index=13}
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="card-dark rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3">Edge Market Data Centers</h3>
-          <p class="text-slate-300">Infrastructure in growing markets with the ability to deploy capacity where needed. :contentReference[oaicite:14]{index=14}</p>
-        </div>
-        <div class="card-dark rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3">Cable Landing Stations</h3>
-          <p class="text-slate-300">Global connectivity supporting digital traffic to and from the region. :contentReference[oaicite:15]{index=15}</p>
-        </div>
-        <div class="card-dark rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3">Dark Fiber Connectivity</h3>
-          <p class="text-slate-300">Custom route development for hyperscalers, data centers, and exchanges. :contentReference[oaicite:16]{index=16}</p>
-        </div>
-        <div class="card-dark rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3">Hyperscale Data Centers</h3>
-          <p class="text-slate-300">Land and power positioned to support large-scale growth in key markets. :contentReference[oaicite:17]{index=17}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Project -->
-  <section id="project" class="section-light anchor-offset">
-    <div class="container-site py-20 md:py-28">
-      <div class="max-w-3xl mb-12">
-        <div class="eyebrow text-red-600 mb-4">Project Overview</div>
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
-          Indianapolis Project
-        </h2>
-        <p class="text-slate-700 text-lg leading-8">
-          The Indianapolis project is planned in phases, beginning with an initial building and allowing for long-term expansion to support future capacity needs. The uploaded presentation includes site plan concepts, renderings, and building specifications for Phase I and Phase II. :contentReference[oaicite:18]{index=18}
-        </p>
-      </div>
-
-      <div class="grid lg:grid-cols-2 gap-8 mb-10">
-        <div class="img-frame">
-          <img src="site-plan.jpg" alt="DC BLOX Indianapolis site plan">
-        </div>
-        <div class="img-frame">
-          <img src="rendering.jpg" alt="DC BLOX Indianapolis rendering">
-        </div>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="card-light rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3 text-slate-900">Phase I</h3>
-          <p class="text-slate-700">Initial development is designed to establish scalable infrastructure in the Indianapolis market. :contentReference[oaicite:19]{index=19}</p>
-        </div>
-        <div class="card-light rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3 text-slate-900">Phase II</h3>
-          <p class="text-slate-700">Planned expansion supports additional long-term capacity and future campus growth. :contentReference[oaicite:20]{index=20}</p>
-        </div>
-        <div class="card-light rounded-3xl p-6">
-          <h3 class="text-xl font-bold mb-3 text-slate-900">Building Specs</h3>
-          <p class="text-slate-700">The project deck outlines multiple building footprints and configurations to support future development. :contentReference[oaicite:21]{index=21}</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Community -->
-  <section id="community" class="section-mid anchor-offset">
-    <div class="container-site py-20 md:py-28">
-      <div class="grid lg:grid-cols-2 gap-12 items-start">
         <div>
-          <div class="eyebrow accent-red mb-4">Community Engagement</div>
-          <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
-            Built with Community Engagement in Mind
-          </h2>
-          <p class="text-slate-300 text-lg leading-8 mb-6">
-            Community engagement is part of the project approach, including education, participation, local partnerships, and outreach. :contentReference[oaicite:22]{index=22}
-          </p>
-          <div class="space-y-4">
-            <div class="card-dark rounded-2xl p-5">
-              <div class="font-bold text-white mb-1">Education</div>
-              <div class="text-slate-300">Facility tours, career development, and tech education programs. :contentReference[oaicite:23]{index=23}</div>
-            </div>
-            <div class="card-dark rounded-2xl p-5">
-              <div class="font-bold text-white mb-1">Participation</div>
-              <div class="text-slate-300">Town halls, local chamber engagement, schools, and community events. :contentReference[oaicite:24]{index=24}</div>
-            </div>
-            <div class="card-dark rounded-2xl p-5">
-              <div class="font-bold text-white mb-1">Support</div>
-              <div class="text-slate-300">Sponsorships, volunteering, charitable donations, and partner organizations. :contentReference[oaicite:25]{index=25}</div>
-            </div>
-          </div>
+          <h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Local Infrastructure</h4>
+          <p class="lead">Tax contributions support road improvements, utility upgrades, and public infrastructure that benefit all residents and businesses — not just those near the campus.</p>
         </div>
-
-        <div class="card-dark rounded-3xl p-8">
-          <h3 class="text-2xl font-bold mb-6">Community Benefits</h3>
-          <ul class="space-y-4 text-slate-300">
-            <li>Supports local tax revenue that can benefit schools, police, infrastructure, libraries, and hospitals. :contentReference[oaicite:26]{index=26}</li>
-            <li>Creates construction demand and job expansion.</li>
-            <li>Enables broader digital connectivity for businesses and communities. :contentReference[oaicite:27]{index=27}</li>
-          </ul>
+        <div>
+          <h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Broadband Connectivity</h4>
+          <p class="lead">New local fiber networks built to serve the DC BLOX campus can improve connectivity for commercial businesses and enhance broadband access for underserved Indianapolis communities.</p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- FAQ -->
-  <section id="faq" class="section-light anchor-offset">
-    <div class="container-site py-20 md:py-28">
-      <div class="max-w-3xl mb-12">
-        <div class="eyebrow text-red-600 mb-4">Frequently Asked Questions</div>
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
-          Common Questions About the Project
-        </h2>
+  <div class="mt-16 fade-up">
+    <h3 class="headline mb-4" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">Independent Research on Data Center Economic Impact</h3>
+    <p class="lead mb-8 max-w-4xl">Leading research institutions have documented the economic benefits data centers bring to host communities.</p>
+    <div class="grid md:grid-cols-2 gap-5">
+      <a href="https://www.pwc.com/us/en/industries/energy-utilities-resources/library/data-centers.html" target="_blank" class="article-card">
+        <div class="article-source">PwC Study</div>
+        <div class="article-title">A New Era of Load Growth: Data Centers and Communities</div>
+        <div class="article-excerpt">PwC research documenting the 6× multiplier of indirect or induced jobs for every direct data center job, and how data center investment creates robust economic hubs in host communities.</div>
+      </a>
+      <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="article-card">
+        <div class="article-source">CBRE Research</div>
+        <div class="article-title">Data Center Growth Has Economic Ripple Effects</div>
+        <div class="article-excerpt">Data-center-related jobs increased 20% nationwide from 2017–2021 while overall U.S. employment rose just 2%. Includes job multiplier and tax revenue breakdowns across multiple states.</div>
+      </a>
+      <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="article-card">
+        <div class="article-source">U.S. Chamber of Commerce</div>
+        <div class="article-title">Data Centers Average $32.5M in Annual Economic Impact</div>
+        <div class="article-excerpt">Analysis of 244 large data centers across 16 states showing average annual economic activity of $32.5M per facility and $9.9M in state and local government revenue generated during construction alone.</div>
+      </a>
+      <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="article-card">
+        <div class="article-source">Federal Reserve Bank of Richmond</div>
+        <div class="article-title">Virginia's Data Centers and Economic Development</div>
+        <div class="article-excerpt">Academic analysis showing how data centers supported 45,460 jobs and $15.3 billion in economic output in Virginia. Equipment tax revenue surged 170% in just two years in Loudoun County.</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT DC BLOX -->
+<section id="about-dcblox" style="background:#f9fafb;">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">Who We Are</div>
+      <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">About DC BLOX</h2>
+      <p class="lead mt-4 max-w-4xl" style="font-size:1.0625rem;">DC BLOX is a vertically integrated digital infrastructure provider focused on the United States that delivers data center and fiber network solutions enabling customers to grow — and accelerating regional economic development. Founded in 2014 and backed by leading institutional investors including Bain Capital, DC BLOX has a proven track record of building and operating world-class facilities alongside the communities it serves.</p>
+    </div>
+
+    <!-- Core values -->
+    <div class="grid md:grid-cols-3 gap-6 mt-12 fade-up">
+      <div class="pro-card p-8" style="border-top:4px solid var(--accent);">
+        <h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:var(--accent);">TRUST</h4>
+        <p class="lead">We strive every day to earn the respect of the communities, customers, and partners we serve. When you lean into relationships, listen more than you talk, and treat people like family — amazing things can be achieved.</p>
       </div>
-
-      <div class="space-y-4">
-        <details class="faq-item card-light rounded-2xl p-6" open>
-          <summary class="font-bold text-xl text-slate-900">Will local power bills go up?</summary>
-          <div class="text-slate-700 mt-4 leading-8">
-            The presentation states that DC BLOX pays for the power it uses and covers incremental direct interconnection costs associated with the project. :contentReference[oaicite:28]{index=28}
-          </div>
-        </details>
-
-        <details class="faq-item card-light rounded-2xl p-6">
-          <summary class="font-bold text-xl text-slate-900">Will these data centers impact water resources?</summary>
-          <div class="text-slate-700 mt-4 leading-8">
-            The uploaded deck explains that the first phase uses a DX waterless cooling system, and larger buildings may use hybrid air and closed loop water systems that recirculate water after the initial priming. :contentReference[oaicite:29]{index=29}
-          </div>
-        </details>
-
-        <details class="faq-item card-light rounded-2xl p-6">
-          <summary class="font-bold text-xl text-slate-900">Are there health or environmental risks?</summary>
-          <div class="text-slate-700 mt-4 leading-8">
-            The presentation states that the facilities use no hazardous materials and dispose of no environmental waste, and that backup generators are used only when utility power is unavailable or during testing. :contentReference[oaicite:30]{index=30}
-          </div>
-        </details>
-
-        <details class="faq-item card-light rounded-2xl p-6">
-          <summary class="font-bold text-xl text-slate-900">How does this help local residents?</summary>
-          <div class="text-slate-700 mt-4 leading-8">
-            According to the deck, benefits include tax revenue, local labor and job expansion, and improved connectivity through new local fiber networks. :contentReference[oaicite:31]{index=31}
-          </div>
-        </details>
+      <div class="pro-card p-8" style="border-top:4px solid var(--navy);">
+        <h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:var(--navy);">TEAMWORK</h4>
+        <p class="lead">DC BLOX's achievements are the culmination of teamwork with customers, vendor partners, financial investors, local community leaders, and government. Everyone contributes; everyone is included.</p>
+      </div>
+      <div class="pro-card p-8" style="border-top:4px solid #1e40af;">
+        <h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:#1e40af;">TENACITY</h4>
+        <p class="lead">DC BLOX never quits, never rests, and never relinquishes our vision to make a difference in the world through the relationships and communities we serve.</p>
       </div>
     </div>
-  </section>
 
-  <!-- Video -->
-  <section id="video" class="section-dark anchor-offset">
-    <div class="container-site py-20 md:py-28">
-      <div class="max-w-3xl mb-10">
-        <div class="eyebrow accent-red mb-4">Presentation</div>
-        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
-          Watch the Indianapolis Presentation
-        </h2>
-        <p class="text-slate-300 text-lg leading-8">
-          Learn more about DC BLOX, digital infrastructure demand, and the Indianapolis project.
-        </p>
-      </div>
-
-      <div class="rounded-3xl overflow-hidden border border-white/10 bg-black">
-        <iframe
-          src="https://player.vimeo.com/video/1176057514"
-          class="w-full h-[280px] md:h-[520px]"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          title="DC BLOX Indianapolis Presentation"
-        ></iframe>
+    <!-- Funding -->
+    <div class="mt-16 pro-card p-10 fade-up">
+      <h3 class="headline mb-6" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">Well-Capitalized with Institutional Backing</h3>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div>
+          <h4 style="font-weight:800;margin-bottom:.75rem;">Public Financing Milestones</h4>
+          <div style="display:flex;flex-direction:column;gap:.75rem;">
+            <div style="display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--accent);font-weight:900;flex-shrink:0;">→</span><p class="lead" style="font-size:.9375rem;"><strong>$1.15 billion</strong> Green project financing in 2025 for Atlanta Data Center Campus</p></div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--accent);font-weight:900;flex-shrink:0;">→</span><p class="lead" style="font-size:.9375rem;"><strong>$265 million</strong> edge hyperscale financing plus additional equity in 2024</p></div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--accent);font-weight:900;flex-shrink:0;">→</span><p class="lead" style="font-size:.9375rem;"><strong>$187.5 million</strong> corporate funding from Bain Capital &amp; Post Road Group in 2021</p></div>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-weight:800;margin-bottom:.75rem;">Ownership</h4>
+          <div style="display:flex;flex-direction:column;gap:.6rem;">
+            <div style="border:1px solid #e5e7eb;border-radius:10px;padding:1rem;"><div style="font-weight:800;color:var(--navy);">Bain Capital</div><div style="font-size:.875rem;color:var(--muted);margin-top:.2rem;">$150 billion assets under management</div></div>
+            <div style="border:1px solid #e5e7eb;border-radius:10px;padding:1rem;"><div style="font-weight:800;color:var(--navy);">Post Road Group</div><div style="font-size:.875rem;color:var(--muted);margin-top:.2rem;">$3 billion AUM; LPs with $86 billion collective AUM</div></div>
+            <div style="border:1px solid #e5e7eb;border-radius:10px;padding:1rem;"><div style="font-weight:800;color:var(--navy);">Future Standard</div><div style="font-size:.875rem;color:var(--muted);margin-top:.2rem;">Institutional infrastructure investor</div></div>
+          </div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#080c18] border-t border-white/10">
-    <div class="container-site py-10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
-      <div>
-        <div class="font-extrabold text-white">DC BLOX</div>
-        <div class="text-slate-400 text-sm">Indianapolis Digital Infrastructure Project</div>
-      </div>
-      <div class="text-slate-400 text-sm">
-        © 2026 DC BLOX. All rights reserved.
+    <!-- Timeline -->
+    <div class="mt-16 fade-up">
+      <h3 class="headline mb-8" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">DC BLOX Company History</h3>
+      <div style="max-width:720px;">
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2014 – 2018</div><p class="lead" style="font-size:.9375rem;">Founded in Atlanta, GA. Opened data centers in Chattanooga, TN and Huntsville, AL. Built the Southeast regional network. Completed Series A and Series B funding rounds.</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2019 – 2021</div><p class="lead" style="font-size:.9375rem;">Opened Birmingham, AL data center. Received first Tier III certification from the Uptime Institute. Secured $187.5M in corporate funding from Bain Capital &amp; Post Road Group.</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2022 – 2023</div><p class="lead" style="font-size:.9375rem;">Opened Greenville, SC. Launched dark fiber business and acquired Light Source Communications. Opened Myrtle Beach Cable Landing Station connecting subsea cables to Europe and South America. Secured hyperscale land and power in Berkeley County SC, Douglas County GA, and Rockdale County GA.</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024 – 2025</div><p class="lead" style="font-size:.9375rem;">Opened high-density AI data hall in Birmingham. Completed Myrtle Beach–Atlanta dark fiber route. Announced hyperscale edge nodes in Conyers GA, Montgomery AL, North Augusta SC, and Huntsville AL. Secured $265M (2024) and $1.15B Green Loan (2025) for Atlanta hyperscale campus. Announced second subsea cable landing station in Palm Coast, FL.</p></div>
+        <div class="timeline-item" style="border-left:2px solid var(--accent);"><div class="timeline-dot" style="background:var(--accent);box-shadow:0 0 0 5px rgba(230,51,41,.2);"></div><div class="timeline-year" style="color:var(--accent);">Now — Indianapolis</div><p class="lead" style="font-size:.9375rem;">DC BLOX is expanding its national footprint to Indianapolis, bringing world-class digital infrastructure and the community-first partnership model that has defined the company since 2014.</p></div>
       </div>
     </div>
-  </footer>
 
+    <!-- What is a data center -->
+    <div class="mt-16 fade-up">
+      <h3 class="headline mb-4" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">What is a Data Center?</h3>
+      <p class="lead mb-6" style="font-size:1.0625rem;">A data center is the physical building that houses the computers and software powering everything from streaming services and online banking to healthcare systems, remote work tools, and artificial intelligence. Think of it as essential infrastructure — like a power plant or water treatment facility — that keeps modern life running reliably.</p>
+      <div class="grid md:grid-cols-2 gap-5">
+        <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e5e7eb;">
+          <h4 style="font-weight:800;margin-bottom:.5rem;">Why are more data centers needed now?</h4>
+          <p class="lead" style="font-size:.9375rem;">The growth of AI, cloud computing, streaming, and the Internet of Things is driving massive demand for new data infrastructure located closer to where people live and work. Hyperscalers including AWS, Microsoft, Google, Meta, and Oracle are all investing heavily in expanding their capacity.</p>
+        </div>
+        <div style="background:#fff;border-radius:12px;padding:1.5rem;border:1px solid #e5e7eb;">
+          <h4 style="font-weight:800;margin-bottom:.5rem;">What everyday services depend on data centers?</h4>
+          <p class="lead" style="font-size:.9375rem;">Communications, entertainment, social media, online learning, business productivity (Teams, Slack, Zoom), enterprise systems, payment networks, digital wallets, healthcare records, transportation systems, and emergency services all depend on data center infrastructure.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Existing facilities -->
+    <div class="mt-16 fade-up">
+      <h3 class="headline mb-8" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">Proven Track Record in Communities</h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="pro-card p-7"><h4 style="font-weight:800;font-size:1.25rem;margin-bottom:.6rem;">Atlanta West — Hyperscale Campus</h4><p class="lead">200cMW (300MW utility) campus on 100 acres with 1.25 million square feet. Phase 1 completing Q2 2026, connected to the DC BLOX fiber ring.</p></div>
+        <div class="pro-card p-7"><h4 style="font-weight:800;font-size:1.25rem;margin-bottom:.6rem;">Myrtle Beach Cable Landing Station</h4><p class="lead">Enables international connectivity to/from the Southeast US, connecting subsea cables to Europe and South America with dark fiber to Atlanta connectivity hubs.</p></div>
+        <div class="pro-card p-7"><h4 style="font-weight:800;font-size:1.25rem;margin-bottom:.6rem;">Edge Market Data Centers</h4><p class="lead">Operating facilities in Birmingham AL, Chattanooga TN, Greenville SC, Huntsville AL, and Myrtle Beach SC — providing infrastructure in growing underserved markets since 2014.</p></div>
+        <div class="pro-card p-7"><h4 style="font-weight:800;font-size:1.25rem;margin-bottom:.6rem;">Hyperscale Edge Nodes</h4><p class="lead">5–10 MW facilities for regional connectivity across the Southeast: Conyers GA, North Augusta SC, Huntsville AL, Montgomery AL, and more to be announced.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT OVERVIEW -->
+<section id="project-overview" class="container">
+  <div class="fade-up">
+    <div class="section-eyebrow">Indianapolis Campus</div>
+    <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">DC BLOX Indianapolis — Project Details</h2>
+    <p class="lead mt-3 max-w-3xl">A phased data center campus bringing world-class digital infrastructure to Indianapolis, starting with a Phase I design proven at existing DC BLOX facilities.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-6 mt-12 fade-up">
+    <div class="pro-card p-7" style="border-top:4px solid var(--accent);">
+      <div class="phase-badge">Phase I</div>
+      <h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">10 MW Building</h3>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Floor Plate / Total</span><span style="font-weight:700;font-size:.875rem;">80,337 SF</span></li>
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Stories</span><span style="font-weight:700;font-size:.875rem;">1-Story</span></li>
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">22 FT</span></li>
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Cooling</span><span style="font-weight:700;font-size:.875rem;color:#065f46;">DX Waterless</span></li>
+        <li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Developable Area</span><span style="font-weight:700;font-size:.875rem;">~22.6 Acres</span></li>
+      </ul>
+      <p class="lead mt-3" style="font-size:.9375rem;">A replica of DC BLOX's operating Rockdale County, GA facility. Includes 77 total parking spaces, storm pond, primary and secondary site entrances.</p>
+    </div>
+    <div class="pro-card p-7" style="border-top:4px solid var(--navy);">
+      <div class="phase-badge" style="background:var(--navy);">Phase II — Bldg A</div>
+      <h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">20 MW Building</h3>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Floor Plate</span><span style="font-weight:700;font-size:.875rem;">71,076 SF</span></li>
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Total Area</span><span style="font-weight:700;font-size:.875rem;">142,152 SF</span></li>
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Stories</span><span style="font-weight:700;font-size:.875rem;">2-Story</span></li>
+        <li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">56 FT</span></li>
+      </ul>
+      <p class="lead mt-3" style="font-size:.9375rem;">Uses a hybrid air/closed-loop water system that recirculates water. No additional utility water required after initial prime. No waste expelled into environment.</p>
+    </div>
+    <div class="pro-card p-7" style="border-top:4px solid #1e40af;">
+      <div class="phase-badge" style="background:#1e40af;">Phase II — Bldg B</div>
+      <h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">48 MW Building</h3>
+      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">1st Floor Plate</span><span style="font-weight:700;font-size:.875rem;">133,748 SF</span></li>
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">2nd Floor Plate</span><span style="font-weight:700;font-size:.875rem;">60,960 SF</span></li>
+        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Total Area</span><span style="font-weight:700;font-size:.875rem;">194,708 SF</span></li>
+        <li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">56 FT</span></li>
+      </ul>
+      <p class="lead mt-3" style="font-size:.9375rem;">Largest building on the campus. Full Phase II site features 195 total parking stalls and a primary entrance with guard house and rejection lane.</p>
+    </div>
+  </div>
+
+  <div class="mt-10 pro-card p-10 fade-up">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Site Design</h4><p class="lead">The campus includes a storm pond, 100-foot rear yard setback, 30-foot side yard setback, loading dock, equipment yard, and both primary and secondary site entrances. Existing utility and access easements are respected throughout.</p></div>
+      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Proven Design</h4><p class="lead">Phase I is designed as a replica of DC BLOX's existing Rockdale County, GA facility — a building already operating successfully. Indianapolis benefits from a tested, proven design with no unknowns on construction or performance.</p></div>
+      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Fiber Connectivity</h4><p class="lead">The Indianapolis campus connects to DC BLOX's regional dark fiber network linking Indianapolis to Atlanta, Nashville, Chattanooga, Huntsville, Birmingham, Greenville, and onward to Myrtle Beach's international cable landing stations.</p></div>
+      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Why Indianapolis?</h4><p class="lead">Indiana's stable business climate, strong utility infrastructure, skilled workforce, and central U.S. location make it ideal for digital infrastructure investment. Indianapolis offers excellent logistics access and the land area needed for a properly designed campus.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY -->
+<section id="community" style="background:#f9fafb;">
+  <div class="container">
+    <div class="fade-up">
+      <div class="section-eyebrow">Our Commitment</div>
+      <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">Our Partnership with Indianapolis</h2>
+      <p class="lead mt-4 max-w-3xl" style="font-size:1.0625rem;">Community engagement is one of DC BLOX's four core mission statements: <em>"Help bring about meaningful change in the communities we serve."</em> This commitment extends through every phase of this project — and for decades beyond.</p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-5 mt-12 fade-up">
+      <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🤝</div><h4 style="font-weight:800;margin-bottom:.5rem;">Sponsorships</h4><p class="lead" style="font-size:.9375rem;">Charitable donations, local event support, and partnerships with organizations that matter to Indianapolis residents.</p></div>
+      <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🙋</div><h4 style="font-weight:800;margin-bottom:.5rem;">Volunteering</h4><p class="lead" style="font-size:.9375rem;">DC BLOX staff actively volunteers with local charities, partner organizations, and schools in every community it operates in.</p></div>
+      <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🎓</div><h4 style="font-weight:800;margin-bottom:.5rem;">Education</h4><p class="lead" style="font-size:.9375rem;">Facility tours, career development programs, and tech education partnerships to inspire the next generation of digital infrastructure professionals.</p></div>
+      <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🏛️</div><h4 style="font-weight:800;margin-bottom:.5rem;">Participation</h4><p class="lead" style="font-size:.9375rem;">Active involvement with the local chamber, community events, and town hall meetings — because input from Indianapolis residents shapes better outcomes.</p></div>
+    </div>
+
+    <div class="mt-16 fade-up" style="background:var(--navy);border-radius:var(--radius);padding:3rem;text-align:center;">
+      <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:1rem;">DC BLOX Mission</div>
+      <h3 class="headline" style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;color:#fff;">Help Bring About Meaningful Change<br>In the Communities We Serve.</h3>
+      <p style="color:rgba(255,255,255,.65);margin-top:1rem;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;">This isn't just a real estate project. It's a long-term commitment to Indianapolis — measured not only by operational performance, but by the lasting positive impact we create for the people who live and work here.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="container">
+  <h2 class="headline fade-up" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">Frequently Asked Questions</h2>
+  <p class="lead mt-3 max-w-3xl fade-up">Questions from Indianapolis residents and neighbors, answered directly. Don't see yours? Reach out — we respond within five business days.</p>
+  <div class="mt-10">
+
+    <div class="faq-item">
+      <div class="faq-q">Will my electric or water utility bills increase because of this project?<span>+</span></div>
+      <div class="faq-a lead">No. DC BLOX's rate structure directly covers all incremental interconnection costs for the additional power needed. Adding data center load can actually put downward pressure on rates by adding MWh to the revenue requirement used to set rates for all customers. AES Indiana has publicly committed to the public utilities commission not to charge regular ratepayers for the costs of supporting increased demand from data centers.<br><br>For water: Phase I uses a DX waterless cooling system — no utility water consumed in normal operations. Phase II's larger buildings use a closed-loop system that recirculates water with no additional utility draw after initial prime. See the <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" style="font-weight:700;text-decoration:underline;">AES Indiana public statement</a>.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How does the cooling system work and how much water does it use?<span>+</span></div>
+      <div class="faq-a lead"><strong>Phase I (10 MW building):</strong> Uses a state-of-the-art DX waterless cooling system. No utility water is consumed during normal operations.<br><br><strong>Phase II (20 MW and 48 MW buildings):</strong> Uses a hybrid air/closed-loop water system. The system recirculates water internally — once initially primed, no additional utility water is required and no waste water is expelled into the environment. This is significantly more water-efficient than a typical industrial or warehouse facility.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Are there any health or environmental risks from living near a data center?<span>+</span></div>
+      <div class="faq-a lead">No. Data centers use no hazardous materials and produce no environmental waste. Diesel backup generators run only when utility power is unavailable and for brief monthly testing — not enough to impact local air quality. Data centers may emit minor electromagnetic fields (EMFs), but concrete walls substantially reduce those emissions. The remaining EMFs are comparable to a typical office building.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Will this increase traffic in the neighborhood?<span>+</span></div>
+      <div class="faq-a lead">No. Data centers are low-traffic operations by nature. A small on-site team works in shifts. There is no large daily workforce commuting, no retail customers, and no constant freight truck activity. Traffic is limited to employees, occasional equipment deliveries, and maintenance personnel — all using designated site access routes.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">What about noise from generators and cooling equipment?<span>+</span></div>
+      <div class="faq-a lead">All mechanical equipment is enclosed within the buildings. Backup generators run only during utility outages and brief monthly tests — not during normal daily operations. Day-to-day operations are quiet by nature and are designed to be significantly less disruptive than a typical industrial, warehouse, or distribution facility on the same site.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How many jobs will this create for Indianapolis?<span>+</span></div>
+      <div class="faq-a lead"><strong>Construction:</strong> Projects like DC BLOX Indianapolis require hundreds of skilled workers — electricians, HVAC technicians, general contractors, and other tradespeople — over a multi-year build period. DC BLOX prioritizes local contractors and labor wherever possible.<br><br><strong>Permanent operations:</strong> Data center technicians, network engineers, facilities managers, security, and support staff — specialized positions paying wages well above county averages.<br><br><strong>Indirect jobs:</strong> Every direct data center job creates approximately 6 additional jobs in the local economy across telecommunications, maintenance, services, and the businesses that support employees and operations.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">How does this project benefit Indianapolis residents specifically?<span>+</span></div>
+      <div class="faq-a lead">Substantial tax revenues reduce the burden on residents and fund better schools, police and security, local infrastructure, hospitals, and libraries. Local employment — direct and indirect — keeps wages and spending in Indianapolis. New fiber connectivity built to support the campus can improve broadband access for commercial businesses and underserved communities. Long-term, a large permanent infrastructure investment provides a stable, recession-resistant addition to the local tax base for decades.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Is DC BLOX a credible, long-term partner for Indianapolis?<span>+</span></div>
+      <div class="faq-a lead">Yes. DC BLOX was founded in 2014 and has been operating data centers in Southeast communities for over a decade. The company has raised over $1.4 billion in institutional capital, is backed by Bain Capital and Post Road Group, and holds a demonstrated track record of community investment — through sponsorships, volunteering, education programs, and active participation in local life. Data centers are permanent infrastructure investments physically anchored to their site. This is a multi-decade commitment to Indianapolis.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q">Who can I contact with additional questions?<span>+</span></div>
+      <div class="faq-a lead">We genuinely welcome every question, concern, and suggestion. Please use the <a href="#contact" style="font-weight:700;text-decoration:underline;">contact form below</a> to reach our community team. We are committed to responding to every inquiry within five business days.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="background:#f9fafb;">
+  <div class="container">
+    <div class="pro-card p-10 fade-up" style="max-width:760px;margin:0 auto;">
+      <div class="section-eyebrow text-center">Get In Touch</div>
+      <h2 class="headline text-center" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:900;">We Want to Hear from You</h2>
+      <p class="lead mt-3 text-center max-w-2xl mx-auto">Questions, concerns, ideas, or feedback — we want to hear all of it. This project will be part of Indianapolis for decades, and we're committed to getting it right together with the community.</p>
+      <form class="mt-10" action="https://formspree.io/f/your-form-id" method="POST">
+        <div style="margin-bottom:1.25rem;"><label style="display:block;font-weight:700;margin-bottom:.5rem;font-size:.9375rem;">Name</label><input class="form-input" type="text" name="name" required placeholder="Your name"></div>
+        <div style="margin-bottom:1.25rem;"><label style="display:block;font-weight:700;margin-bottom:.5rem;font-size:.9375rem;">Email</label><input class="form-input" type="email" name="email" required placeholder="your@email.com"></div>
+        <div style="margin-bottom:1.25rem;"><label style="display:block;font-weight:700;margin-bottom:.5rem;font-size:.9375rem;">Message</label><textarea class="form-input form-textarea" name="message" required placeholder="Your question or comment..."></textarea></div>
+        <button type="submit" class="btn btn-red" style="width:100%;font-size:1rem;padding:1rem;">Send Message</button>
+      </form>
+      <div style="text-align:center;margin-top:1.5rem;"><a href="#project-overview" class="btn btn-ghost">Review Project Details</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+      <span style="font-size:1.5rem;font-weight:900;font-family:'Barlow Condensed',sans-serif;color:#fff;">⬡ DC BLOX</span>
+      <span style="color:rgba(255,255,255,.4);font-size:.875rem;">Indianapolis Campus</span>
+    </div>
+    <div style="font-size:.875rem;color:rgba(255,255,255,.5);">© <span id="year"></span> DC BLOX. All rights reserved.</div>
+    <div style="font-size:.75rem;color:rgba(255,255,255,.35);margin-top:1.5rem;max-width:800px;line-height:1.7;">AES Indiana rate impact information sourced from AES Indiana's official public statement, September 19, 2025. Building specifications sourced from DC BLOX Indianapolis project documents. Job multiplier figure (6×) sourced from PwC data center industry research. Additional economic impact data from CBRE, U.S. Chamber of Commerce, and Federal Reserve Bank of Richmond independent research.</div>
+  </div>
+</footer>
+
+<button id="backToTop" title="Back to Top">↑</button>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const closeNav = document.getElementById('closeNav');
+  hamburger.addEventListener('click', () => { hamburger.classList.toggle('open'); mobileNav.classList.toggle('open'); });
+  closeNav.addEventListener('click', () => { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); });
+  mobileNav.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { hamburger.classList.remove('open'); mobileNav.classList.remove('open'); }));
+
+  const topbar = document.getElementById('topbar');
+  const btt = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    topbar.classList.toggle('scrolled', window.scrollY > 10);
+    btt.classList.toggle('show', window.scrollY > 500);
+  });
+  btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  const io = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('show'); }), { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+  document.querySelectorAll('.faq-q').forEach(q => q.addEventListener('click', () => q.parentElement.classList.toggle('open')));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
