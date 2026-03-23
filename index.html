@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DC BLOX | Indianapolis</title>
+  <meta
+    name="description"
+    content="DC BLOX Indianapolis digital infrastructure project supporting AI, cloud, connectivity, and regional economic growth."
+  />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0b1020;
+      color: #f8fafc;
+      scroll-behavior: smooth;
+    }
+
+    .container-site {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    .hero-bg {
+      background:
+        linear-gradient(rgba(7, 10, 20, 0.75), rgba(7, 10, 20, 0.85)),
+        url('hero-background.jpg') center/cover no-repeat;
+    }
+
+    .section-dark {
+      background: #0b1020;
+    }
+
+    .section-mid {
+      background: #11182d;
+    }
+
+    .section-light {
+      background: #f8fafc;
+      color: #0f172a;
+    }
+
+    .glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card-dark {
+      background: #121a31;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .card-light {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+    }
+
+    .eyebrow {
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .accent-red {
+      color: #ef4444;
+    }
+
+    .accent-bg {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      padding: 14px 24px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      background: #ef4444;
+      color: white;
+      text-decoration: none;
+    }
+
+    .btn-primary:hover {
+      background: #dc2626;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 9999px;
+      padding: 14px 24px;
+      font-weight: 700;
+      transition: 0.2s ease;
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      background: rgba(255,255,255,0.04);
+      text-decoration: none;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-1px);
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .img-frame {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: #0f172a;
+    }
+
+    .img-frame img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .anchor-offset {
+      scroll-margin-top: 100px;
+    }
+
+    .faq-item summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-[#0b1020]/90 backdrop-blur border-b border-white/10">
+    <div class="container-site py-4 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-3 no-underline text-white">
+        <div class="w-10 h-10 rounded-lg accent-bg flex items-center justify-center font-extrabold text-white">
+          DC
+        </div>
+        <div>
+          <div class="font-extrabold tracking-wide">DC BLOX</div>
+          <div class="text-xs text-slate-400">Indianapolis</div>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm text-slate-200">
+        <a href="#overview" class="hover:text-white">Overview</a>
+        <a href="#drivers" class="hover:text-white">Why It Matters</a>
+        <a href="#project" class="hover:text-white">Project</a>
+        <a href="#community" class="hover:text-white">Community</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+        <a href="#video" class="hover:text-white">Video</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="hero-bg">
+    <div class="container-site py-24 md:py-32">
+      <div class="max-w-3xl">
+        <div class="eyebrow text-red-400 mb-5">DC BLOX Introduction Indianapolis</div>
+        <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+          Digital Infrastructure for the Next Generation of Growth
+        </h1>
+        <p class="text-lg md:text-xl text-slate-200 max-w-2xl mb-8">
+          DC BLOX is a vertically integrated digital infrastructure provider focused on data centers, connectivity, and the systems that support AI, cloud, and modern digital life.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#project" class="btn-primary">Explore the Project</a>
+          <a href="#video" class="btn-secondary">Watch Presentation</a>
+        </div>
+      </div>
+
+      <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="glass rounded-3xl p-6">
+          <div class="stat-number">AI</div>
+          <div class="text-slate-300 mt-2">Growing compute demand is driving the need for new infrastructure</div>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <div class="stat-number">Cloud</div>
+          <div class="text-slate-300 mt-2">Regional capacity helps bring services closer to users and businesses</div>
+        </div>
+        <div class="glass rounded-3xl p-6">
+          <div class="stat-number">Connectivity</div>
+          <div class="text-slate-300 mt-2">Data centers and fiber networks support the digital economy</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section id="overview" class="section-dark anchor-offset">
+    <div class="container-site py-20 md:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="eyebrow accent-red mb-4">Company Overview</div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+            A Digital Infrastructure Provider Focused on Growth
+          </h2>
+          <p class="text-slate-300 text-lg leading-8 mb-6">
+            DC BLOX delivers data center and fiber network solutions that help customers grow while supporting regional economic development. The company focuses on the infrastructure needed to power businesses, applications, and digital services across growing markets. :contentReference[oaicite:1]{index=1}
+          </p>
+          <p class="text-slate-300 text-lg leading-8">
+            With a vertically integrated model, DC BLOX supports land acquisition, development, operations, and connectivity for modern digital infrastructure projects. :contentReference[oaicite:2]{index=2}
+          </p>
+        </div>
+
+        <div class="card-dark rounded-3xl p-8">
+          <h3 class="text-2xl font-bold mb-6">Core Strengths</h3>
+          <div class="grid gap-4">
+            <div class="rounded-2xl bg-white/5 p-5">
+              <div class="font-semibold text-white mb-1">Vertically Integrated Platform</div>
+              <div class="text-slate-300">A development model built around infrastructure delivery, operations, and connectivity</div>
+            </div>
+            <div class="rounded-2xl bg-white/5 p-5">
+              <div class="font-semibold text-white mb-1">Business and Government Relationships</div>
+              <div class="text-slate-300">Strong regional relationships that support project development and growth</div>
+            </div>
+            <div class="rounded-2xl bg-white/5 p-5">
+              <div class="font-semibold text-white mb-1">Scalable Infrastructure</div>
+              <div class="text-slate-300">Data center and network solutions designed to support long-term digital demand</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values -->
+  <section class="section-mid">
+    <div class="container-site py-20 md:py-28">
+      <div class="max-w-3xl mb-12">
+        <div class="eyebrow accent-red mb-4">Core Values</div>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+          Trust, Teamwork, and Tenacity
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card-dark rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3">Trust</h3>
+          <p class="text-slate-300">
+            Earning the respect of communities, customers, and partners through strong relationships and accountability. :contentReference[oaicite:3]{index=3}
+          </p>
+        </div>
+        <div class="card-dark rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3">Teamwork</h3>
+          <p class="text-slate-300">
+            Success depends on collaboration with customers, partners, investors, local leaders, and government stakeholders. :contentReference[oaicite:4]{index=4}
+          </p>
+        </div>
+        <div class="card-dark rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3">Tenacity</h3>
+          <p class="text-slate-300">
+            A shared mission and long-term commitment to building infrastructure that makes a difference. :contentReference[oaicite:5]{index=5}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demand Drivers -->
+  <section id="drivers" class="section-light anchor-offset">
+    <div class="container-site py-20 md:py-28">
+      <div class="max-w-3xl mb-12">
+        <div class="eyebrow text-red-600 mb-4">Why It Matters</div>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
+          What Is Driving the Need for New Digital Infrastructure?
+        </h2>
+        <p class="text-slate-700 text-lg leading-8">
+          Demand is being driven by artificial intelligence, cloud services, internet-connected devices, social media, streaming, and the broader digital transformation of businesses and communities. :contentReference[oaicite:6]{index=6}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card-light rounded-3xl p-6">
+          <div class="text-xl font-bold mb-3 text-slate-900">Internet of Things</div>
+          <p class="text-slate-700">Connected devices continue increasing demand for fast, reliable infrastructure.</p>
+        </div>
+        <div class="card-light rounded-3xl p-6">
+          <div class="text-xl font-bold mb-3 text-slate-900">Artificial Intelligence / Cloud</div>
+          <p class="text-slate-700">AI and cloud platforms require major infrastructure growth and capacity. :contentReference[oaicite:7]{index=7}</p>
+        </div>
+        <div class="card-light rounded-3xl p-6">
+          <div class="text-xl font-bold mb-3 text-slate-900">Social Media / Streaming</div>
+          <p class="text-slate-700">Digital content consumption continues to accelerate across industries and users.</p>
+        </div>
+        <div class="card-light rounded-3xl p-6">
+          <div class="text-xl font-bold mb-3 text-slate-900">Digital Transformation</div>
+          <p class="text-slate-700">Businesses and public services are increasingly powered by digital systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hyperscalers -->
+  <section class="section-dark">
+    <div class="container-site py-20 md:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="eyebrow accent-red mb-4">Industry Momentum</div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+            Hyperscalers Are Expanding Infrastructure
+          </h2>
+          <p class="text-slate-300 text-lg leading-8 mb-6">
+            Major digital platforms are continuing to invest in new infrastructure to bring services closer to users, support AI growth, and expand network capacity where demand is highest. :contentReference[oaicite:8]{index=8}
+          </p>
+          <div class="grid grid-cols-2 gap-4 text-slate-300">
+            <div class="card-dark rounded-2xl p-4">Closer to users and businesses</div>
+            <div class="card-dark rounded-2xl p-4">Massive growth to support AI</div>
+            <div class="card-dark rounded-2xl p-4">New network capacity</div>
+            <div class="card-dark rounded-2xl p-4">Investment in future economies</div>
+          </div>
+        </div>
+
+        <div class="card-dark rounded-3xl p-8">
+          <h3 class="text-2xl font-bold mb-5">Digital Infrastructure Needed</h3>
+          <ul class="space-y-4 text-slate-300">
+            <li>Data Centers</li>
+            <li>Power</li>
+            <li>New Fiber Networks</li>
+            <li>5G / 6G Mobile</li>
+            <li>Subsea Cable Connectivity</li>
+          </ul>
+          <p class="text-slate-400 mt-6">
+            These infrastructure layers work together to support economic growth and digital access. :contentReference[oaicite:9]{index=9}
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is a data center -->
+  <section class="section-light">
+    <div class="container-site py-20 md:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="eyebrow text-red-600 mb-4">Data Center Basics</div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
+            What Is a Data Center?
+          </h2>
+          <p class="text-slate-700 text-lg leading-8 mb-5">
+            A data center is the physical building that houses the computers and software systems powering the digital world. It supports everything from streaming services and online banking to AI and enterprise systems. :contentReference[oaicite:10]{index=10}
+          </p>
+          <p class="text-slate-700 text-lg leading-8">
+            As cloud and AI continue to grow, more data centers are needed closer to users and businesses. :contentReference[oaicite:11]{index=11}
+          </p>
+        </div>
+
+        <div class="card-light rounded-3xl p-8">
+          <h3 class="text-2xl font-bold mb-5 text-slate-900">Everyday Uses of Digital Infrastructure</h3>
+          <ul class="space-y-4 text-slate-700">
+            <li><strong>Everyday human activity:</strong> communication, entertainment, social media, online learning</li>
+            <li><strong>Business operations:</strong> productivity, collaboration, CRM, ERP, and HR systems</li>
+            <li><strong>Ecommerce and payments:</strong> digital wallets, payment networks, fraud detection</li>
+            <li><strong>Public services:</strong> healthcare, transportation, utilities, emergency services</li>
+            <li><strong>Industry and innovation:</strong> research, manufacturing, and agriculture :contentReference[oaicite:12]{index=12}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offerings -->
+  <section class="section-dark">
+    <div class="container-site py-20 md:py-28">
+      <div class="max-w-3xl mb-12">
+        <div class="eyebrow accent-red mb-4">Offerings</div>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+          DC BLOX Offerings
+        </h2>
+        <p class="text-slate-300 text-lg leading-8">
+          DC BLOX provides data center and fiber network solutions designed to enable customer growth and accelerate regional economic development. :contentReference[oaicite:13]{index=13}
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="card-dark rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3">Edge Market Data Centers</h3>
+          <p class="text-slate-300">Infrastructure in growing markets with the ability to deploy capacity where needed. :contentReference[oaicite:14]{index=14}</p>
+        </div>
+        <div class="card-dark rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3">Cable Landing Stations</h3>
+          <p class="text-slate-300">Global connectivity supporting digital traffic to and from the region. :contentReference[oaicite:15]{index=15}</p>
+        </div>
+        <div class="card-dark rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3">Dark Fiber Connectivity</h3>
+          <p class="text-slate-300">Custom route development for hyperscalers, data centers, and exchanges. :contentReference[oaicite:16]{index=16}</p>
+        </div>
+        <div class="card-dark rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3">Hyperscale Data Centers</h3>
+          <p class="text-slate-300">Land and power positioned to support large-scale growth in key markets. :contentReference[oaicite:17]{index=17}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project -->
+  <section id="project" class="section-light anchor-offset">
+    <div class="container-site py-20 md:py-28">
+      <div class="max-w-3xl mb-12">
+        <div class="eyebrow text-red-600 mb-4">Project Overview</div>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
+          Indianapolis Project
+        </h2>
+        <p class="text-slate-700 text-lg leading-8">
+          The Indianapolis project is planned in phases, beginning with an initial building and allowing for long-term expansion to support future capacity needs. The uploaded presentation includes site plan concepts, renderings, and building specifications for Phase I and Phase II. :contentReference[oaicite:18]{index=18}
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8 mb-10">
+        <div class="img-frame">
+          <img src="site-plan.jpg" alt="DC BLOX Indianapolis site plan">
+        </div>
+        <div class="img-frame">
+          <img src="rendering.jpg" alt="DC BLOX Indianapolis rendering">
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="card-light rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Phase I</h3>
+          <p class="text-slate-700">Initial development is designed to establish scalable infrastructure in the Indianapolis market. :contentReference[oaicite:19]{index=19}</p>
+        </div>
+        <div class="card-light rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Phase II</h3>
+          <p class="text-slate-700">Planned expansion supports additional long-term capacity and future campus growth. :contentReference[oaicite:20]{index=20}</p>
+        </div>
+        <div class="card-light rounded-3xl p-6">
+          <h3 class="text-xl font-bold mb-3 text-slate-900">Building Specs</h3>
+          <p class="text-slate-700">The project deck outlines multiple building footprints and configurations to support future development. :contentReference[oaicite:21]{index=21}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community" class="section-mid anchor-offset">
+    <div class="container-site py-20 md:py-28">
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="eyebrow accent-red mb-4">Community Engagement</div>
+          <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+            Built with Community Engagement in Mind
+          </h2>
+          <p class="text-slate-300 text-lg leading-8 mb-6">
+            Community engagement is part of the project approach, including education, participation, local partnerships, and outreach. :contentReference[oaicite:22]{index=22}
+          </p>
+          <div class="space-y-4">
+            <div class="card-dark rounded-2xl p-5">
+              <div class="font-bold text-white mb-1">Education</div>
+              <div class="text-slate-300">Facility tours, career development, and tech education programs. :contentReference[oaicite:23]{index=23}</div>
+            </div>
+            <div class="card-dark rounded-2xl p-5">
+              <div class="font-bold text-white mb-1">Participation</div>
+              <div class="text-slate-300">Town halls, local chamber engagement, schools, and community events. :contentReference[oaicite:24]{index=24}</div>
+            </div>
+            <div class="card-dark rounded-2xl p-5">
+              <div class="font-bold text-white mb-1">Support</div>
+              <div class="text-slate-300">Sponsorships, volunteering, charitable donations, and partner organizations. :contentReference[oaicite:25]{index=25}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-dark rounded-3xl p-8">
+          <h3 class="text-2xl font-bold mb-6">Community Benefits</h3>
+          <ul class="space-y-4 text-slate-300">
+            <li>Supports local tax revenue that can benefit schools, police, infrastructure, libraries, and hospitals. :contentReference[oaicite:26]{index=26}</li>
+            <li>Creates construction demand and job expansion.</li>
+            <li>Enables broader digital connectivity for businesses and communities. :contentReference[oaicite:27]{index=27}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section-light anchor-offset">
+    <div class="container-site py-20 md:py-28">
+      <div class="max-w-3xl mb-12">
+        <div class="eyebrow text-red-600 mb-4">Frequently Asked Questions</div>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6 text-slate-900">
+          Common Questions About the Project
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="faq-item card-light rounded-2xl p-6" open>
+          <summary class="font-bold text-xl text-slate-900">Will local power bills go up?</summary>
+          <div class="text-slate-700 mt-4 leading-8">
+            The presentation states that DC BLOX pays for the power it uses and covers incremental direct interconnection costs associated with the project. :contentReference[oaicite:28]{index=28}
+          </div>
+        </details>
+
+        <details class="faq-item card-light rounded-2xl p-6">
+          <summary class="font-bold text-xl text-slate-900">Will these data centers impact water resources?</summary>
+          <div class="text-slate-700 mt-4 leading-8">
+            The uploaded deck explains that the first phase uses a DX waterless cooling system, and larger buildings may use hybrid air and closed loop water systems that recirculate water after the initial priming. :contentReference[oaicite:29]{index=29}
+          </div>
+        </details>
+
+        <details class="faq-item card-light rounded-2xl p-6">
+          <summary class="font-bold text-xl text-slate-900">Are there health or environmental risks?</summary>
+          <div class="text-slate-700 mt-4 leading-8">
+            The presentation states that the facilities use no hazardous materials and dispose of no environmental waste, and that backup generators are used only when utility power is unavailable or during testing. :contentReference[oaicite:30]{index=30}
+          </div>
+        </details>
+
+        <details class="faq-item card-light rounded-2xl p-6">
+          <summary class="font-bold text-xl text-slate-900">How does this help local residents?</summary>
+          <div class="text-slate-700 mt-4 leading-8">
+            According to the deck, benefits include tax revenue, local labor and job expansion, and improved connectivity through new local fiber networks. :contentReference[oaicite:31]{index=31}
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section id="video" class="section-dark anchor-offset">
+    <div class="container-site py-20 md:py-28">
+      <div class="max-w-3xl mb-10">
+        <div class="eyebrow accent-red mb-4">Presentation</div>
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-6">
+          Watch the Indianapolis Presentation
+        </h2>
+        <p class="text-slate-300 text-lg leading-8">
+          Learn more about DC BLOX, digital infrastructure demand, and the Indianapolis project.
+        </p>
+      </div>
+
+      <div class="rounded-3xl overflow-hidden border border-white/10 bg-black">
+        <iframe
+          src="https://player.vimeo.com/video/1176057514"
+          class="w-full h-[280px] md:h-[520px]"
+          frameborder="0"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="DC BLOX Indianapolis Presentation"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#080c18] border-t border-white/10">
+    <div class="container-site py-10 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <div>
+        <div class="font-extrabold text-white">DC BLOX</div>
+        <div class="text-slate-400 text-sm">Indianapolis Digital Infrastructure Project</div>
+      </div>
+      <div class="text-slate-400 text-sm">
+        © 2026 DC BLOX. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
