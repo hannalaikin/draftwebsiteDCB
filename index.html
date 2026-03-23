@@ -9,28 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:#ffffff; --text:#0f0a1e; --muted:#4b5563;
-      --accent:#e63329; --accent-dark:#b81f16;
-      --navy:#1a0a2e; --navy-mid:#2d1a4a;
-      --card-bg:#ffffff; --radius:16px; --container:1240px;
-    }
+    :root{--bg:#fff;--text:#0f0a1e;--muted:#4b5563;--accent:#e63329;--accent-dark:#b81f16;--navy:#1a0a2e;--navy-mid:#2d1a4a;--card-bg:#fff;--radius:16px;--container:1240px;}
     html,body{background:var(--bg);color:var(--text);font-family:'Barlow',system-ui,sans-serif;scroll-behavior:smooth;}
     .container{max-width:var(--container);margin:0 auto;padding:0 1.25rem;}
     .headline{letter-spacing:-.02em;line-height:1.15;font-family:'Barlow Condensed',sans-serif;}
     .lead{color:var(--muted);line-height:1.7;font-size:1.0625rem;}
-
     .btn{display:inline-block;padding:.8rem 1.5rem;border-radius:6px;font-weight:700;transition:all .2s;font-size:.9375rem;font-family:'Barlow',sans-serif;letter-spacing:.02em;text-transform:uppercase;}
-    .btn-red{background:var(--accent);color:#fff;}
-    .btn-red:hover{background:var(--accent-dark);box-shadow:0 4px 20px rgba(230,51,41,.35);transform:translateY(-1px);}
-    .btn-ghost{border:2px solid #d1d5db;background:transparent;color:var(--text);}
-    .btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
-    .btn-outline-white{border:2px solid rgba(255,255,255,.3);background:transparent;color:#fff;}
-    .btn-outline-white:hover{border-color:#fff;}
-
+    .btn-red{background:var(--accent);color:#fff;}.btn-red:hover{background:var(--accent-dark);box-shadow:0 4px 20px rgba(230,51,41,.35);transform:translateY(-1px);}
+    .btn-ghost{border:2px solid #d1d5db;background:transparent;color:var(--text);}.btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+    .btn-outline-white{border:2px solid rgba(255,255,255,.3);background:transparent;color:#fff;}.btn-outline-white:hover{border-color:#fff;}
     .pro-card{background:var(--card-bg);border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);box-shadow:0 4px 20px rgba(0,0,0,.05);transition:all .3s cubic-bezier(.4,0,.2,1);}
     .pro-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1);}
-
     #sticky-shell{position:sticky;top:0;z-index:80;background:#fff;}
     .top-banner{background:var(--navy);color:#fff;text-align:center;padding:10px 16px;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;}
     header{background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.06);transition:box-shadow .3s;}
@@ -41,8 +30,6 @@
     nav a:hover::after{width:100%;}
     .logo-mark{color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:1.5rem;}
     .logo-sub{font-size:.75rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;}
-
-    /* Hero */
     .hero{position:relative;overflow:hidden;min-height:680px;display:flex;align-items:flex-end;padding:0;}
     .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(26,10,46,.92) 0%,rgba(26,10,46,.55) 60%,rgba(26,10,46,.3) 100%);}
@@ -50,66 +37,43 @@
     .hero__content{position:relative;z-index:2;width:100%;padding-top:5rem;padding-bottom:5rem;}
     .hero-glass{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(16px);border-radius:var(--radius);padding:2.5rem 2.8rem;max-width:860px;}
     @media(max-width:768px){.hero-glass{padding:1.75rem;}.hero{min-height:520px;}}
-
-    /* Hero fallback (no image) */
-    .hero-fallback{background:linear-gradient(135deg,#1a0a2e 0%,#2d1a4a 40%,#1a0a2e 100%);}
-
     section{padding-top:5.5rem;padding-bottom:5.5rem;}
     @media(max-width:768px){section{padding-top:4rem;padding-bottom:4rem;}}
-
     .section-eyebrow{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem;}
     .phase-badge{display:inline-block;background:var(--accent);color:#fff;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;padding:.2rem .6rem;border-radius:4px;margin-bottom:.75rem;}
-
-    /* Facility image */
     .facility-img{width:100%;border-radius:var(--radius);overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.12);}
     .facility-img img{width:100%;height:auto;display:block;transition:transform .5s ease;}
     .facility-img:hover img{transform:scale(1.02);}
-
     .img-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem;}
     .img-grid img{width:100%;height:260px;object-fit:cover;border-radius:12px;box-shadow:0 4px 16px rgba(0,0,0,.1);}
-
-    /* Team */
     .team-card{background:#fff;border:1px solid #e5e7eb;border-radius:var(--radius);overflow:hidden;transition:all .3s;}
     .team-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.1);border-color:var(--accent);}
-    .team-photo{width:100%;height:220px;object-fit:cover;object-position:top;}
-    .team-photo-placeholder{width:100%;height:220px;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 100%);display:flex;align-items:center;justify-content:center;font-size:3rem;font-weight:900;color:rgba(255,255,255,.15);font-family:'Barlow Condensed',sans-serif;}
-
-    /* Myth card */
+    .team-photo{width:100%;height:220px;object-fit:cover;object-position:top;display:block;}
     .myth-card{border-radius:var(--radius);padding:1.75rem;border:1px solid #e5e7eb;background:#fff;height:100%;}
     .myth-label{font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.4rem;}
     .answer-label{font-weight:800;font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#065f46;margin-top:1rem;margin-bottom:.4rem;}
-
-    /* FAQ */
     .faq-item{border-bottom:1px solid #e5e7eb;padding:1.25rem 0;}
     .faq-q{cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:1.0625rem;gap:1rem;}
     .faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
     .faq-item.open .faq-a{max-height:1000px;padding-top:1rem;}
     .faq-q span{transition:transform .3s;font-size:1.5rem;font-weight:400;color:var(--accent);flex-shrink:0;}
     .faq-item.open .faq-q span{transform:rotate(45deg);}
-
-    /* Timeline */
     .timeline-item{position:relative;padding-left:2.75rem;padding-bottom:2.5rem;border-left:2px solid #e5e7eb;}
     .timeline-item:last-child{border-left:none;padding-bottom:0;}
     .timeline-dot{position:absolute;left:-7px;top:6px;width:14px;height:14px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 5px rgba(230,51,41,.15);}
     .timeline-year{font-weight:900;font-size:1.125rem;color:var(--accent);font-family:'Barlow Condensed',sans-serif;margin-bottom:.4rem;}
-
-    /* Article cards */
     .article-card{display:block;padding:1.75rem;background:#fff;border:1px solid #e5e7eb;border-radius:12px;transition:all .3s;height:100%;}
     .article-card:hover{border-color:var(--accent);box-shadow:0 10px 30px rgba(230,51,41,.12);transform:translateY(-3px);}
     .article-source{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);font-weight:700;margin-bottom:.6rem;}
     .article-title{font-weight:800;font-size:1.0625rem;line-height:1.4;margin-bottom:.6rem;}
     .article-excerpt{font-size:.9375rem;color:var(--muted);line-height:1.65;}
-
     .multiplier-visual{display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;padding:2.5rem;background:linear-gradient(135deg,#fff0ef 0%,#f0ebff 100%);border-radius:var(--radius);}
     .multiplier-box{background:#fff;padding:2rem 1.5rem;border-radius:12px;text-align:center;min-width:160px;box-shadow:0 6px 20px rgba(0,0,0,.08);}
     .quote-block{border-left:4px solid var(--accent);padding-left:1.5rem;margin:1.5rem 0;}
-
     .fade-up{opacity:0;transform:translateY(16px);transition:all .7s ease;}
     .fade-up.show{opacity:1;transform:translateY(0);}
-
     #backToTop{position:fixed;bottom:32px;right:32px;background:var(--accent);color:#fff;border-radius:8px;padding:.75rem 1rem;font-weight:800;opacity:0;pointer-events:none;transform:translateY(10px);transition:all .3s;z-index:40;font-size:1.125rem;}
     #backToTop.show{opacity:1;pointer-events:auto;transform:translateY(0);}
-
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;}
     @media(max-width:768px){.hamburger{display:flex;}}
     .hamburger span{width:26px;height:2.5px;background:currentColor;transition:all .3s;border-radius:2px;}
@@ -120,56 +84,23 @@
     .mobile-nav.open{display:block;}
     .mobile-nav a{display:block;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.1);font-weight:700;font-size:1.125rem;color:#fff;text-transform:uppercase;letter-spacing:.04em;}
     .mobile-close{position:absolute;top:1.5rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;background:none;border:none;}
-
     .form-input{width:100%;padding:.75rem 1rem;border:1px solid #e5e7eb;border-radius:8px;font-size:1rem;font-family:'Barlow',sans-serif;transition:border-color .2s;}
     .form-input:focus{outline:none;border-color:var(--accent);}
     .form-textarea{min-height:120px;resize:vertical;}
     footer{background:var(--navy);color:rgba(255,255,255,.85);padding:3.5rem 0;}
-
-    /* community engagement images */
     .community-img-wrap{border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);}
     .community-img-wrap img{width:100%;height:240px;object-fit:cover;display:block;}
+    /* Swap hint — remove in production */
+    img[src^="data:image/svg"][src*="REPLACE"]{cursor:pointer;}
   </style>
 </head>
 <body>
-
-<!-- ============================================================
-     IMAGE GUIDE — export these from the PowerPoint / PDF:
-
-     HERO:
-       phase1-rendering.jpg   → Slide 17: exterior rendering of Indianapolis building
-
-     EXISTING FACILITIES:
-       rockdale-aerial-1.jpg  → Slide 18: aerial of Rockdale County GA facility (Phase I model)
-       rockdale-aerial-2.jpg  → Slide 19: second angle, Rockdale County GA
-       atlanta-rendering.jpg  → Slide 32: Atlanta West hyperscale campus rendering
-       edge-node-rendering.jpg → Slide 33: edge node aerial/rendering
-       edge-facility.jpg      → Slide 34: operating edge market data center (Birmingham)
-       cable-landing.jpg      → Slide 35: Myrtle Beach Cable Landing Station
-
-     COMMUNITY:
-       community-sponsorship.jpg  → Slide 24: team with check/donation photo
-       community-volunteering.jpg → Slide 24: staff volunteering at food bank
-       community-education.jpg    → Slide 24: students inside data center
-
-     TEAM HEADSHOTS (from Slide 6):
-       team-jeff-uphues.jpg
-       team-chris-gatch.jpg
-       team-greg-carender.jpg
-       team-kevin-odonnell.jpg
-       team-melih-ileri.jpg
-       team-john-dumler.jpg
-       team-michael-clark.jpg
-       team-mark-masi.jpg
-
-     Place all image files in the same folder as index.html.
-================================================================ -->
 
 <div id="sticky-shell">
   <div class="top-banner">DC BLOX Indianapolis • Powering the Future of Indianapolis Digital Infrastructure</div>
   <div style="background:#f3f0ff;border-bottom:1px solid #e5e7eb;">
     <div class="container" style="padding:10px 16px;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;">
-      <div style="font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);">DATA CENTERS BRING LOWER TRAFFIC, STRONGER TAX BASE, AND HIGH-WAGE JOBS VS. TYPICAL INDUSTRIAL USES</div>
+      <div style="font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--navy);">DATA CENTERS: LOWER TRAFFIC · STRONGER TAX BASE · HIGH-WAGE JOBS</div>
       <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
         <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" style="color:#1e40af;font-weight:600;text-decoration:underline;">AES Indiana Rate Statement</a>
         <span style="color:#9ca3af;">•</span>
@@ -201,28 +132,21 @@
 
 <div class="mobile-nav" id="mobileNav">
   <button class="mobile-close" id="closeNav">✕</button>
-  <a href="#myth-busters">Key Questions</a>
-  <a href="#aes-commitment">AES & Rates</a>
-  <a href="#economic-impact">Economic Impact</a>
-  <a href="#about-dcblox">About DC BLOX</a>
-  <a href="#team">Our Team</a>
-  <a href="#project-overview">Project Details</a>
-  <a href="#community">Community</a>
-  <a href="#faq">FAQ</a>
-  <a href="#contact">Contact</a>
+  <a href="#myth-busters">Key Questions</a><a href="#aes-commitment">AES & Rates</a>
+  <a href="#economic-impact">Economic Impact</a><a href="#about-dcblox">About DC BLOX</a>
+  <a href="#team">Our Team</a><a href="#project-overview">Project Details</a>
+  <a href="#community">Community</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
 </div>
 
-<!-- ===================== HERO ===================== -->
-<!-- Image: phase1-rendering.jpg (Slide 17 — Indianapolis building exterior rendering) -->
-<div class="hero hero-fallback">
-  <img class="hero-img" src="phase1-rendering.jpg" alt="DC BLOX Indianapolis data center rendering" onerror="this.style.display='none'">
-  <div class="hero-overlay"></div>
-  <div class="hero-grid"></div>
+<!-- HERO — swap src to: phase1-rendering.jpg (Slide 17) -->
+<div class="hero">
+  <img class="hero-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjcwMCIgdmlld0JveD0iMCAwIDE0MDAgNzAwIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZyIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTBhMmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzJkMWE0YTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSA0MCAwIEwgMCAwIDAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjA2KSIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgICA8L3BhdHRlcm4+CiAgPC9kZWZzPgogIDxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSIxNDAwIiBoZWlnaHQ9IjcwMCIgZmlsbD0idXJsKCNncmlkKSIvPgogIDxyZWN0IHg9IjY5OCIgeT0iMCIgd2lkdGg9IjQiIGhlaWdodD0iNzAwIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjE1KSIvPgogIDxyZWN0IHg9IjAiIHk9IjM0OCIgd2lkdGg9IjE0MDAiIGhlaWdodD0iNCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4xNSkiLz4KICA8Y2lyY2xlIGN4PSI3MDAiIGN5PSIzMjAiIHI9IjQwIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjIpIiBzdHJva2U9InJnYmEoMjMwLDUxLDQxLDAuNCkiIHN0cm9rZS13aWR0aD0iMiIvPgogIDx0ZXh0IHg9IjcwMCIgeT0iMzM1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC43KSI+8J+Pl++4jzwvdGV4dD4KICA8dGV4dCB4PSI3MDAiIHk9IjM4MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLCBBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjkwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5JTkRJQU5BUE9MSVMgQ0FNUFVTPC90ZXh0PgogIDx0ZXh0IHg9IjcwMCIgeT0iNDA4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiPlBoYXNlIEkgQnVpbGRpbmcgUmVuZGVyaW5nIOKAlCBTbGlkZSAxNzwvdGV4dD4KICA8cmVjdCB4PSI2NDAiIHk9IjY1OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjcpIi8+CiAgPHRleHQgeD0iNzAwIiB5PSI2NzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5SRVBMQUNFIFdJVEggUEhPVE88L3RleHQ+Cjwvc3ZnPg==" alt="DC BLOX Indianapolis data center rendering">
+  <div class="hero-overlay"></div><div class="hero-grid"></div>
   <div class="hero__content container">
     <div class="hero-glass fade-up">
       <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.5);margin-bottom:.5rem;">Community Information</div>
       <h1 class="headline" style="font-size:clamp(2.25rem,5vw,3.75rem);color:#fff;font-weight:900;">Reliable Technology. Responsible Growth.<br>Real Benefits for Indianapolis.</h1>
-      <p style="color:rgba(255,255,255,.7);line-height:1.7;font-size:1.0625rem;margin-top:1rem;max-width:680px;">Existing customer rates are not expected to be negatively impacted. Phase I uses a waterless cooling system with no utility water consumed. Daily traffic is far below typical industrial alternatives. High-wage local jobs and meaningful long-term tax contributions to the community.</p>
+      <p style="color:rgba(255,255,255,.7);line-height:1.7;font-size:1.0625rem;margin-top:1rem;max-width:680px;">Existing customer rates are not expected to be negatively impacted. Phase I uses a waterless cooling system with no utility water consumed. Daily traffic is far below typical industrial alternatives. High-wage local jobs and meaningful long-term tax contributions.</p>
       <div style="margin-top:1.75rem;display:flex;flex-wrap:wrap;gap:.75rem;">
         <a href="#myth-busters" class="btn btn-red">Common Questions Answered</a>
         <a href="https://www.dcblox.com" target="_blank" class="btn btn-outline-white">Visit dcblox.com</a>
@@ -231,27 +155,17 @@
   </div>
 </div>
 
-<!-- KEY FACTS STRIP -->
 <div style="background:var(--navy);">
   <div class="container">
     <div class="grid md:grid-cols-3" style="border-top:1px solid rgba(255,255,255,.08);">
-      <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,.08);">
-        <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Traffic & Noise</div>
-        <div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Dramatically fewer daily vehicle trips than a typical warehouse or distribution facility</div>
-      </div>
-      <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,.08);">
-        <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Water Use</div>
-        <div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Phase I: DX waterless cooling — zero utility water consumed during normal operations</div>
-      </div>
-      <div style="padding:1.75rem 2rem;">
-        <div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Local Jobs</div>
-        <div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Every direct data center job creates approximately 6 additional jobs in the local economy</div>
-      </div>
+      <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,.08);"><div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Traffic & Noise</div><div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Dramatically fewer daily vehicle trips than a typical warehouse or distribution facility</div></div>
+      <div style="padding:1.75rem 2rem;border-right:1px solid rgba(255,255,255,.08);"><div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Water Use</div><div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Phase I: DX waterless cooling — zero utility water consumed during normal operations</div></div>
+      <div style="padding:1.75rem 2rem;"><div style="font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.5rem;">Local Jobs</div><div style="font-size:1.075rem;font-weight:800;color:#fff;line-height:1.35;">Every direct data center job creates approximately 6 additional jobs in the local economy</div></div>
     </div>
   </div>
 </div>
 
-<!-- ===================== MYTH BUSTERS ===================== -->
+<!-- MYTH BUSTERS -->
 <section id="myth-busters" class="container">
   <div class="text-center mb-12 fade-up">
     <div class="section-eyebrow">Straight Answers</div>
@@ -259,77 +173,43 @@
     <p class="lead mt-3 max-w-3xl mx-auto">The questions we hear most from Indianapolis residents — answered directly and honestly.</p>
   </div>
   <div class="grid md:grid-cols-2 gap-6">
-    <div class="myth-card fade-up">
-      <div class="myth-label">Question</div>
-      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Won't my power bill go up because of this?"</p>
-      <div class="answer-label">Answer</div>
-      <p class="lead" style="font-size:.9375rem;">No. In fact, additional power consumed by DC BLOX could put <strong>downward pressure on rates</strong> by adding more MWh to the revenue requirement used to set rates for all customers. DC BLOX pays for all power at regulated rates and covers 100% of all incremental interconnection costs. AES Indiana has publicly committed to the public utilities commission <strong>not to charge regular ratepayers</strong> for the costs of supporting increased demand from data centers.</p>
-      <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="inline-block mt-4 text-sm font-semibold underline" style="color:var(--accent);">Read the AES Indiana public statement →</a>
-    </div>
-    <div class="myth-card fade-up">
-      <div class="myth-label">Question</div>
-      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Will these data centers impact our water resources?"</p>
-      <div class="answer-label">Answer</div>
-      <p class="lead" style="font-size:.9375rem;">No. Phase I uses a <strong>state-of-the-art DX waterless cooling system</strong> — no utility water consumed in normal operations. Phase II's larger buildings use a <strong>hybrid air/closed-loop water system</strong> that recirculates water internally, requiring no additional utility water once initially primed. No waste water is expelled into the environment.</p>
-    </div>
-    <div class="myth-card fade-up">
-      <div class="myth-label">Question</div>
-      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Aren't there health risks from living near a data center?"</p>
-      <div class="answer-label">Answer</div>
-      <p class="lead" style="font-size:.9375rem;">No. DC BLOX data centers use <strong>no hazardous materials</strong> and produce no environmental waste. Diesel generators run only when utility power is unavailable and for brief monthly testing — not enough to impact local air quality. Any electromagnetic fields (EMFs) are reduced by concrete walls and are no greater than those from a typical office building.</p>
-    </div>
-    <div class="myth-card fade-up">
-      <div class="myth-label">Question</div>
-      <p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Will this actually help Indianapolis residents?"</p>
-      <div class="answer-label">Answer</div>
-      <p class="lead" style="font-size:.9375rem;">Yes. Substantial <strong>tax revenues</strong> will help fund schools, police and security, local infrastructure, hospitals, and libraries. Every direct data center job creates approximately <strong>6× that number in indirect local jobs</strong>. New fiber networks can also enhance broadband access to underserved communities across Indianapolis.</p>
-    </div>
+    <div class="myth-card fade-up"><div class="myth-label">Question</div><p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Won't my power bill go up because of this?"</p><div class="answer-label">Answer</div><p class="lead" style="font-size:.9375rem;">No. Additional power consumed by DC BLOX could put <strong>downward pressure on rates</strong> by adding more MWh to the revenue base used to set rates for all customers. DC BLOX pays 100% of all incremental interconnection costs. AES Indiana has publicly committed to the IURC <strong>not to charge regular ratepayers</strong> for costs of supporting increased data center demand.</p><a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="inline-block mt-4 text-sm font-semibold underline" style="color:var(--accent);">Read the AES Indiana public statement →</a></div>
+    <div class="myth-card fade-up"><div class="myth-label">Question</div><p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Will these data centers impact our water resources?"</p><div class="answer-label">Answer</div><p class="lead" style="font-size:.9375rem;">No. Phase I uses a <strong>state-of-the-art DX waterless cooling system</strong> — zero utility water consumed in normal operations. Phase II's larger buildings use a <strong>hybrid air/closed-loop water system</strong> that recirculates water internally — no additional utility water after initial prime, no waste expelled into the environment.</p></div>
+    <div class="myth-card fade-up"><div class="myth-label">Question</div><p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Aren't there health risks from living near a data center?"</p><div class="answer-label">Answer</div><p class="lead" style="font-size:.9375rem;">No. DC BLOX data centers use <strong>no hazardous materials</strong> and produce no environmental waste. Generators run only for backup power and brief monthly tests — not enough to impact local air quality. Any electromagnetic fields (EMFs) are reduced by concrete walls to no more than a typical office building.</p></div>
+    <div class="myth-card fade-up"><div class="myth-label">Question</div><p style="font-weight:700;font-size:1.0625rem;line-height:1.4;">"Will this actually help Indianapolis residents?"</p><div class="answer-label">Answer</div><p class="lead" style="font-size:.9375rem;">Yes. Substantial <strong>tax revenues</strong> will fund schools, police and security, local infrastructure, hospitals, and libraries. Every direct data center job creates approximately <strong>6× that number in indirect local jobs</strong>. New fiber networks can also enhance broadband access to underserved communities across Indianapolis.</p></div>
   </div>
 </section>
 
-<!-- ===================== AES COMMITMENT ===================== -->
+<!-- AES COMMITMENT -->
 <section id="aes-commitment" style="background:var(--navy);">
   <div class="container">
     <div class="fade-up text-center mb-12" style="max-width:800px;margin-left:auto;margin-right:auto;">
       <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem;">From Your Utility Provider</div>
       <h2 class="headline" style="font-size:clamp(1.75rem,4vw,3rem);font-weight:900;color:#fff;">AES Indiana: Rates Not Expected to Be Negatively Impacted</h2>
-      <p style="color:rgba(255,255,255,.7);line-height:1.7;margin-top:1rem;">AES Indiana has publicly confirmed that existing customer rates are not expected to be negatively impacted as a result of serving new data center load in Indianapolis.</p>
+      <p style="color:rgba(255,255,255,.7);line-height:1.7;margin-top:1rem;">AES Indiana has publicly confirmed that existing customer rates are not expected to be negatively impacted as a result of serving new data center load.</p>
     </div>
     <div class="fade-up" style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:2.5rem;">
       <div style="display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.5rem;flex-wrap:wrap;">
         <div style="width:72px;height:72px;background:var(--accent);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.25rem;font-weight:900;font-family:'Barlow Condensed',sans-serif;flex-shrink:0;">AES</div>
         <div><h3 style="font-size:1.375rem;font-weight:800;color:#fff;">Official Statement — AES Indiana President</h3><p style="font-size:.875rem;color:rgba(255,255,255,.5);margin-top:.25rem;">Brandi Davis-Handy, AES Indiana President • September 19, 2025</p></div>
       </div>
-      <div class="quote-block">
-        <p style="font-style:italic;color:rgba(255,255,255,.85);font-size:1.0625rem;line-height:1.7;">"We've developed a strategy that shows <strong style="color:#fff;">no negative impact to existing customer rates</strong> should AES Indiana power data centers in the future. This is possible because, even though more investments are required to serve those customers, <strong style="color:#fff;">we will be able to spread our costs over a larger amount of electricity sold.</strong>"</p>
-      </div>
+      <div class="quote-block"><p style="font-style:italic;color:rgba(255,255,255,.85);font-size:1.0625rem;line-height:1.7;">"We've developed a strategy that shows <strong style="color:#fff;">no negative impact to existing customer rates</strong> should AES Indiana power data centers in the future. This is possible because, even though more investments are required to serve those customers, <strong style="color:#fff;">we will be able to spread our costs over a larger amount of electricity sold.</strong>"</p></div>
       <div class="grid md:grid-cols-3 gap-5 mt-8">
-        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);">
-          <h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">DC BLOX Pays Its Share</h4>
-          <p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">DC BLOX covers 100% of all incremental interconnection costs for the additional power needed. No infrastructure cost is passed to existing residential or commercial customers.</p>
-        </div>
-        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);">
-          <h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">Cost-Spreading Benefit</h4>
-          <p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">Adding large data center load spreads fixed infrastructure costs across more electricity sold — which can put downward pressure on per-unit rates for all customers.</p>
-        </div>
-        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);">
-          <h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">Public Oversight</h4>
-          <p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">AES Indiana's commitments go through the Indiana Utility Regulatory Commission (IURC) — a public process ensuring full transparency and accountability.</p>
-        </div>
+        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);"><h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">DC BLOX Pays Its Share</h4><p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">DC BLOX covers 100% of all incremental interconnection costs. No infrastructure cost is passed to existing residential or commercial customers.</p></div>
+        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);"><h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">Cost-Spreading Benefit</h4><p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">Adding large data center load spreads fixed infrastructure costs across more electricity — which can put downward pressure on per-unit rates for all customers.</p></div>
+        <div style="background:rgba(255,255,255,.07);border-radius:12px;padding:1.5rem;border:1px solid rgba(255,255,255,.08);"><h4 style="font-weight:800;color:#fff;margin-bottom:.6rem;">Public Oversight via IURC</h4><p style="color:rgba(255,255,255,.65);line-height:1.65;font-size:.9375rem;">AES Indiana's commitments go through the Indiana Utility Regulatory Commission — a public process ensuring full transparency and accountability.</p></div>
       </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="btn btn-red">Read the Full AES Indiana Statement</a>
-      </div>
+      <div style="text-align:center;margin-top:2rem;"><a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" class="btn btn-red">Read the Full AES Indiana Statement</a></div>
     </div>
   </div>
 </section>
 
-<!-- ===================== ECONOMIC IMPACT ===================== -->
+<!-- ECONOMIC IMPACT -->
 <section id="economic-impact" class="container">
   <div class="text-center mb-12 fade-up">
     <div class="section-eyebrow">Real Numbers</div>
     <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">Real Economic Benefits for Indianapolis</h2>
-    <p class="lead mt-3 max-w-3xl mx-auto">Data centers are proven economic drivers — generating substantial tax revenue, high-paying local jobs, and improved community services with minimal impact on roads and neighborhoods.</p>
+    <p class="lead mt-3 max-w-3xl mx-auto">Data centers are proven economic drivers — substantial tax revenue, high-paying jobs, and improved community services with minimal neighborhood impact.</p>
   </div>
   <div class="fade-up">
     <h3 class="headline text-center mb-8" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">The Job Multiplier Effect</h3>
@@ -338,115 +218,90 @@
       <div style="font-size:2.5rem;color:var(--accent);font-weight:900;">→</div>
       <div class="multiplier-box"><div style="font-size:3rem;font-weight:900;color:var(--navy);line-height:1;font-family:'Barlow Condensed',sans-serif;">6×</div><div style="font-weight:700;font-size:.9375rem;margin-top:.75rem;line-height:1.4;">Indirect Jobs<br>Created Locally</div></div>
     </div>
-    <p class="lead text-center mt-6 max-w-3xl mx-auto">Indirect jobs span telecommunications, construction, software development, facilities maintenance, security, and local businesses that support data center employees and operations.</p>
+    <p class="lead text-center mt-6 max-w-3xl mx-auto">Indirect jobs span telecommunications, construction, software development, facilities maintenance, security, and local businesses that support operations and employees.</p>
     <p style="text-align:center;font-size:.8125rem;color:var(--muted);margin-top:.5rem;">Source: PwC data center industry research</p>
   </div>
   <div class="mt-16 fade-up">
     <h3 class="headline mb-6" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">How Tax Revenue Benefits Indianapolis</h3>
-    <div class="pro-card p-8">
-      <div class="grid md:grid-cols-2 gap-8">
-        <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Schools</h4><p class="lead">Property and equipment tax contributions flow directly to school district funding — enabling better facilities, programs, and salaries without increasing residential property taxes.</p></div>
-        <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Public Safety & Services</h4><p class="lead">Tax revenues fund police and security, fire departments, hospitals, libraries, and essential public services that Indianapolis residents rely on every day.</p></div>
-        <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Local Infrastructure</h4><p class="lead">Tax contributions support road improvements, utility upgrades, and public infrastructure benefiting all residents and businesses — not just those near the campus.</p></div>
-        <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Broadband Connectivity</h4><p class="lead">New local fiber networks built to serve the DC BLOX campus can improve connectivity for commercial businesses and enhance broadband access for underserved Indianapolis communities.</p></div>
-      </div>
-    </div>
+    <div class="pro-card p-8"><div class="grid md:grid-cols-2 gap-8">
+      <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Schools</h4><p class="lead">Property and equipment tax contributions flow directly to school district funding — enabling better facilities, programs, and salaries without increasing residential property taxes.</p></div>
+      <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Public Safety & Services</h4><p class="lead">Tax revenues fund police and security, fire departments, hospitals, libraries, and essential public services that Indianapolis residents rely on every day.</p></div>
+      <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Local Infrastructure</h4><p class="lead">Tax contributions support road improvements, utility upgrades, and public infrastructure benefiting all residents and businesses in the area.</p></div>
+      <div><h4 style="font-weight:800;font-size:1.125rem;color:var(--accent);margin-bottom:.6rem;">Broadband Connectivity</h4><p class="lead">New fiber networks built to serve the campus can improve connectivity for businesses and enhance broadband access for underserved Indianapolis communities.</p></div>
+    </div></div>
   </div>
   <div class="mt-16 fade-up">
     <h3 class="headline mb-4" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">Independent Research</h3>
     <div class="grid md:grid-cols-2 gap-5">
       <a href="https://www.pwc.com/us/en/industries/energy-utilities-resources/library/data-centers.html" target="_blank" class="article-card"><div class="article-source">PwC Study</div><div class="article-title">A New Era of Load Growth: Data Centers and Communities</div><div class="article-excerpt">PwC research documenting the 6× multiplier of indirect jobs for every direct data center job, and how data center investment creates robust economic hubs in host communities.</div></a>
-      <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="article-card"><div class="article-source">CBRE Research</div><div class="article-title">Data Center Growth Has Economic Ripple Effects</div><div class="article-excerpt">Data-center-related jobs increased 20% nationwide from 2017–2021 while overall U.S. employment rose just 2%. Detailed job multiplier and tax revenue breakdowns across multiple states.</div></a>
-      <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="article-card"><div class="article-source">U.S. Chamber of Commerce</div><div class="article-title">Data Centers Average $32.5M in Annual Economic Impact</div><div class="article-excerpt">Analysis of 244 large data centers across 16 states showing $32.5M average annual economic activity per facility and $9.9M in government revenue during construction.</div></a>
+      <a href="https://www.cbre.com/insights/briefs/data-center-growth-has-economic-ripple-effects" target="_blank" class="article-card"><div class="article-source">CBRE Research</div><div class="article-title">Data Center Growth Has Economic Ripple Effects</div><div class="article-excerpt">Data-center-related jobs increased 20% from 2017–2021 while overall U.S. employment rose just 2%. Detailed job multiplier and tax revenue breakdowns across multiple states.</div></a>
+      <a href="https://www.uschamber.com/technology/us-chamber-report-data-centers-average-325-million-economic-impact" target="_blank" class="article-card"><div class="article-source">U.S. Chamber of Commerce</div><div class="article-title">Data Centers Average $32.5M in Annual Economic Impact</div><div class="article-excerpt">Analysis of 244 large data centers: $32.5M average annual economic activity per facility and $9.9M in government revenue during construction alone.</div></a>
       <a href="https://www.richmondfed.org/publications/research/econ_focus/2023/q2_feature2" target="_blank" class="article-card"><div class="article-source">Federal Reserve Bank of Richmond</div><div class="article-title">Virginia's Data Centers and Economic Development</div><div class="article-excerpt">Data centers supported 45,460 jobs and $15.3B in economic output in Virginia. Equipment tax revenue surged 170% in two years in Loudoun County.</div></a>
     </div>
   </div>
 </section>
 
-<!-- ===================== ABOUT DC BLOX ===================== -->
+<!-- ABOUT DC BLOX -->
 <section id="about-dcblox" style="background:#f9fafb;">
   <div class="container">
     <div class="fade-up">
       <div class="section-eyebrow">Who We Are</div>
       <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">About DC BLOX</h2>
       <p class="lead mt-4 max-w-4xl" style="font-size:1.0625rem;">DC BLOX is a vertically integrated digital infrastructure provider delivering data center and fiber network solutions that enable customers to grow — and accelerating regional economic development. Founded in 2014 and backed by leading institutional investors, DC BLOX has a proven decade-long track record of building world-class facilities alongside the communities it serves.</p>
-      <div style="margin-top:1.25rem;">
-        <a href="https://www.dcblox.com" target="_blank" class="btn btn-red">Visit dcblox.com →</a>
-      </div>
+      <a href="https://www.dcblox.com" target="_blank" class="btn btn-red mt-4 inline-block">Visit dcblox.com →</a>
     </div>
 
-    <!-- Existing facility images -->
-    <!-- Images: rockdale-aerial-1.jpg (Slide 18) and rockdale-aerial-2.jpg (Slide 19) -->
+    <!-- Phase I model proof — rockdale images -->
     <div class="mt-12 fade-up">
-      <div style="background:var(--navy);border-radius:var(--radius);padding:1.5rem 2rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
-        <div style="background:var(--accent);border-radius:6px;padding:.3rem .75rem;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;flex-shrink:0;">Phase I Model</div>
-        <p style="color:rgba(255,255,255,.85);font-size:1rem;font-weight:600;margin:0;">The Indianapolis Phase I building is a replica of DC BLOX's operating Rockdale County, GA facility — already proven and performing.</p>
+      <div style="background:var(--navy);border-radius:var(--radius);padding:1.25rem 2rem;margin-bottom:1.25rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+        <div style="background:var(--accent);border-radius:6px;padding:.3rem .75rem;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:#fff;flex-shrink:0;">Phase I Model Facility</div>
+        <p style="color:rgba(255,255,255,.85);font-size:1rem;font-weight:600;margin:0;">The Indianapolis Phase I building is a replica of DC BLOX's operating Rockdale County, GA facility — proven and already performing.</p>
       </div>
+      <!-- swap src attrs to rockdale-aerial-1.jpg and rockdale-aerial-2.jpg when ready -->
       <div class="grid md:grid-cols-2 gap-5">
-        <div class="facility-img">
-          <!-- rockdale-aerial-1.jpg: Slide 18 — aerial of existing Rockdale County, GA data center -->
-          <img src="rockdale-aerial-1.jpg" alt="DC BLOX Rockdale County GA facility — aerial view" loading="lazy">
-        </div>
-        <div class="facility-img">
-          <!-- rockdale-aerial-2.jpg: Slide 19 — second aerial angle of Rockdale County, GA facility -->
-          <img src="rockdale-aerial-2.jpg" alt="DC BLOX Rockdale County GA facility — second aerial view" loading="lazy">
-        </div>
+        <div class="facility-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMzZDIwNjA7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfm7DvuI88L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+Uk9DS0RBTEUgQ09VTlRZLCBHQTwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjMwOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj5BZXJpYWwgVmlldyDigJQgU2xpZGUgMTg8L3RleHQ+CiAgPHJlY3QgeD0iMzQwIiB5PSI0NTgiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjQiIHJ4PSIxMiIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC43KSIvPgogIDx0ZXh0IHg9IjQwMCIgeT0iNDc1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+UkVQTEFDRSBXSVRIIFBIT1RPPC90ZXh0Pgo8L3N2Zz4=" alt="DC BLOX Rockdale County GA facility — aerial view" loading="lazy"></div>
+        <div class="facility-img"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmQxYTRhO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTBhMmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfm7DvuI88L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+Uk9DS0RBTEUgQ09VTlRZLCBHQTwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjMwOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj5TZWNvbmQgQWVyaWFsIEFuZ2xlIOKAlCBTbGlkZSAxOTwvdGV4dD4KICA8cmVjdCB4PSIzNDAiIHk9IjQ1OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjcpIi8+CiAgPHRleHQgeD0iNDAwIiB5PSI0NzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5SRVBMQUNFIFdJVEggUEhPVE88L3RleHQ+Cjwvc3ZnPg==" alt="DC BLOX Rockdale County GA facility — second aerial" loading="lazy"></div>
       </div>
-      <p style="text-align:center;font-size:.8125rem;color:var(--muted);margin-top:.75rem;">DC BLOX Rockdale County, GA — existing operating facility that Indianapolis Phase I is modeled after</p>
+      <p style="text-align:center;font-size:.8125rem;color:var(--muted);margin-top:.75rem;">DC BLOX Rockdale County, GA — the existing operating facility Indianapolis Phase I is modeled after</p>
     </div>
 
     <!-- Core values -->
     <div class="grid md:grid-cols-3 gap-6 mt-16 fade-up">
-      <div class="pro-card p-8" style="border-top:4px solid var(--accent);">
-        <h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:var(--accent);">TRUST</h4>
-        <p class="lead">We strive every day to earn the respect of the communities, customers, and partners we serve. When you lean into relationships, listen more than you talk, and treat people like family — amazing things can be achieved.</p>
-      </div>
-      <div class="pro-card p-8" style="border-top:4px solid var(--navy);">
-        <h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:var(--navy);">TEAMWORK</h4>
-        <p class="lead">DC BLOX's achievements are the culmination of teamwork with customers, vendor partners, financial investors, local community leaders, and government. Everyone contributes; everyone is included.</p>
-      </div>
-      <div class="pro-card p-8" style="border-top:4px solid #1e40af;">
-        <h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:#1e40af;">TENACITY</h4>
-        <p class="lead">DC BLOX never quits, never rests, and never relinquishes our vision to make a difference in the world through the relationships and communities we serve.</p>
-      </div>
+      <div class="pro-card p-8" style="border-top:4px solid var(--accent);"><h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:var(--accent);">TRUST</h4><p class="lead">We strive every day to earn the respect of the communities, customers, and partners we serve. When you lean into relationships, listen more than you talk, and treat people like family — amazing things can be achieved.</p></div>
+      <div class="pro-card p-8" style="border-top:4px solid var(--navy);"><h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:var(--navy);">TEAMWORK</h4><p class="lead">DC BLOX's achievements are the culmination of teamwork with customers, vendor partners, financial investors, local community leaders, and government. Everyone contributes; everyone is included.</p></div>
+      <div class="pro-card p-8" style="border-top:4px solid #1e40af;"><h4 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;color:#1e40af;">TENACITY</h4><p class="lead">DC BLOX never quits, never rests, and never relinquishes our vision to make a difference in the world through the relationships and communities we serve.</p></div>
     </div>
 
-    <!-- Other facilities image row -->
-    <!-- Images: atlanta-rendering.jpg (Slide 32), edge-node-rendering.jpg (Slide 33), edge-facility.jpg (Slide 34), cable-landing.jpg (Slide 35) -->
+    <!-- Facilities image grid -->
+    <!-- swap to: atlanta-rendering.jpg, edge-node-rendering.jpg, edge-facility.jpg, cable-landing.jpg -->
     <div class="mt-16 fade-up">
       <h3 class="headline mb-6" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">Proven Track Record Across the Country</h3>
       <div class="img-grid">
-        <!-- atlanta-rendering.jpg: Slide 32 — Atlanta West hyperscale campus rendering -->
-        <img src="atlanta-rendering.jpg" alt="DC BLOX Atlanta West hyperscale campus" loading="lazy" title="Atlanta West — 200cMW hyperscale campus, Phase 1 completing Q2 2026">
-        <!-- edge-node-rendering.jpg: Slide 33 — edge node facility aerial rendering -->
-        <img src="edge-node-rendering.jpg" alt="DC BLOX hyperscale edge node" loading="lazy" title="DC BLOX hyperscale edge node — 5-10 MW facilities for regional connectivity">
-        <!-- edge-facility.jpg: Slide 34 — actual operating edge market data center -->
-        <img src="edge-facility.jpg" alt="DC BLOX operating edge market data center" loading="lazy" title="DC BLOX edge market data center — operating since 2014 in Southeast markets">
-        <!-- cable-landing.jpg: Slide 35 — Myrtle Beach Cable Landing Station -->
-        <img src="cable-landing.jpg" alt="DC BLOX Myrtle Beach Cable Landing Station" loading="lazy" title="Myrtle Beach Cable Landing Station — international subsea connectivity to Europe and South America">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlNjMzMjk7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfj5nvuI88L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+QVRMQU5UQSBXRVNUIENBTVBVUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjMwOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj4yMDBjTVcgSHlwZXJzY2FsZSDigJQgU2xpZGUgMzI8L3RleHQ+CiAgPHJlY3QgeD0iMzQwIiB5PSI0NTgiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjQiIHJ4PSIxMiIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC43KSIvPgogIDx0ZXh0IHg9IjQwMCIgeT0iNDc1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+UkVQTEFDRSBXSVRIIFBIT1RPPC90ZXh0Pgo8L3N2Zz4=" alt="DC BLOX Atlanta West hyperscale campus" loading="lazy">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMmQxYTRhO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxZTQwYWY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPuKaoTwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI4MCIgZm9udC1mYW1pbHk9IkFyaWFsIEJsYWNrLCBBcmlhbCIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9IjkwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5IWVBFUlNDQUxFIEVER0UgTk9ERTwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjMwOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj414oCTMTAgTVcgRmFjaWxpdHkg4oCUIFNsaWRlIDMzPC90ZXh0PgogIDxyZWN0IHg9IjM0MCIgeT0iNDU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjQ3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="DC BLOX hyperscale edge node" loading="lazy">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDY1ZjQ2O3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTBhMmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCflqXvuI88L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+RURHRSBNQVJLRVQgREFUQSBDRU5URVI8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIzMDgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjU1KSI+T3BlcmF0aW5nIEZhY2lsaXR5IOKAlCBTbGlkZSAzNDwvdGV4dD4KICA8cmVjdCB4PSIzNDAiIHk9IjQ1OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjcpIi8+CiAgPHRleHQgeD0iNDAwIiB5PSI0NzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5SRVBMQUNFIFdJVEggUEhPVE88L3RleHQ+Cjwvc3ZnPg==" alt="DC BLOX operating edge market data center" loading="lazy">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWU0MGFmO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTBhMmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfjIo8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+TVlSVExFIEJFQUNIIENMUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjMwOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj5DYWJsZSBMYW5kaW5nIFN0YXRpb24g4oCUIFNsaWRlIDM1PC90ZXh0PgogIDxyZWN0IHg9IjM0MCIgeT0iNDU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjQ3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="DC BLOX Myrtle Beach Cable Landing Station" loading="lazy">
       </div>
       <div class="grid md:grid-cols-4 gap-3 mt-3">
-        <p style="font-size:.75rem;color:var(--muted);text-align:center;">Atlanta West Hyperscale Campus<br><span style="color:var(--accent);font-weight:700;">200cMW · 1.25M SF · Q2 2026</span></p>
+        <p style="font-size:.75rem;color:var(--muted);text-align:center;">Atlanta West Hyperscale<br><span style="color:var(--accent);font-weight:700;">200cMW · 1.25M SF</span></p>
         <p style="font-size:.75rem;color:var(--muted);text-align:center;">Hyperscale Edge Nodes<br><span style="color:var(--accent);font-weight:700;">5–10 MW across Southeast</span></p>
         <p style="font-size:.75rem;color:var(--muted);text-align:center;">Edge Market Data Centers<br><span style="color:var(--accent);font-weight:700;">Operating since 2014</span></p>
-        <p style="font-size:.75rem;color:var(--muted);text-align:center;">Myrtle Beach Cable Landing<br><span style="color:var(--accent);font-weight:700;">Europe + South America connectivity</span></p>
+        <p style="font-size:.75rem;color:var(--muted);text-align:center;">Myrtle Beach CLS<br><span style="color:var(--accent);font-weight:700;">Europe + S. America connectivity</span></p>
       </div>
     </div>
 
-    <!-- Funding & timeline -->
+    <!-- Funding -->
     <div class="mt-16 pro-card p-10 fade-up">
       <h3 class="headline mb-6" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">Well-Capitalized with Institutional Backing</h3>
       <div class="grid md:grid-cols-2 gap-8">
-        <div>
-          <h4 style="font-weight:800;margin-bottom:.75rem;">Public Financing Milestones</h4>
+        <div><h4 style="font-weight:800;margin-bottom:.75rem;">Public Financing Milestones</h4>
           <div style="display:flex;flex-direction:column;gap:.75rem;">
             <div style="display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--accent);font-weight:900;flex-shrink:0;">→</span><p class="lead" style="font-size:.9375rem;"><strong>$1.15 billion</strong> Green project financing in 2025 — Atlanta Data Center Campus</p></div>
             <div style="display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--accent);font-weight:900;flex-shrink:0;">→</span><p class="lead" style="font-size:.9375rem;"><strong>$265 million</strong> edge hyperscale financing plus additional equity in 2024</p></div>
-            <div style="display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--accent);font-weight:900;flex-shrink:0;">→</span><p class="lead" style="font-size:.9375rem;"><strong>$187.5 million</strong> corporate funding from Bain Capital &amp; Post Road Group in 2021</p></div>
+            <div style="display:flex;gap:.75rem;align-items:flex-start;"><span style="color:var(--accent);font-weight:900;flex-shrink:0;">→</span><p class="lead" style="font-size:.9375rem;"><strong>$187.5 million</strong> corporate funding from Bain Capital & Post Road Group in 2021</p></div>
           </div>
         </div>
-        <div>
-          <h4 style="font-weight:800;margin-bottom:.75rem;">Ownership</h4>
+        <div><h4 style="font-weight:800;margin-bottom:.75rem;">Ownership</h4>
           <div style="display:flex;flex-direction:column;gap:.6rem;">
             <div style="border:1px solid #e5e7eb;border-radius:10px;padding:1rem;"><div style="font-weight:800;color:var(--navy);">Bain Capital</div><div style="font-size:.875rem;color:var(--muted);margin-top:.2rem;">$150 billion assets under management</div></div>
             <div style="border:1px solid #e5e7eb;border-radius:10px;padding:1rem;"><div style="font-weight:800;color:var(--navy);">Post Road Group</div><div style="font-size:.875rem;color:var(--muted);margin-top:.2rem;">$3 billion AUM; LPs with $86 billion collective AUM</div></div>
@@ -461,267 +316,115 @@
       <h3 class="headline mb-8" style="font-size:clamp(1.5rem,3vw,2.25rem);font-weight:900;">DC BLOX Company History</h3>
       <div style="max-width:720px;">
         <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2014 – 2018</div><p class="lead" style="font-size:.9375rem;">Founded in Atlanta, GA. Opened data centers in Chattanooga, TN and Huntsville, AL. Built the Southeast regional network. Completed Series A and Series B funding.</p></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2019 – 2021</div><p class="lead" style="font-size:.9375rem;">Opened Birmingham, AL data center. Received first Tier III certification from the Uptime Institute. Secured $187.5M from Bain Capital &amp; Post Road Group.</p></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2022 – 2023</div><p class="lead" style="font-size:.9375rem;">Opened Greenville, SC. Launched dark fiber business. Acquired Light Source Communications. Opened Myrtle Beach Cable Landing Station. Secured hyperscale sites in Berkeley County SC, Douglas County GA, and Rockdale County GA.</p></div>
-        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024 – 2025</div><p class="lead" style="font-size:.9375rem;">Opened high-density AI data hall in Birmingham. Completed Myrtle Beach–Atlanta dark fiber route. Announced hyperscale edge nodes across the Southeast. Secured $265M (2024) and $1.15B Green Loan (2025). Announced Palm Coast, FL second cable landing station.</p></div>
-        <div class="timeline-item" style="border-left:2px solid var(--accent);"><div class="timeline-dot" style="background:var(--accent);box-shadow:0 0 0 5px rgba(230,51,41,.2);"></div><div class="timeline-year" style="color:var(--accent);">Now — Indianapolis</div><p class="lead" style="font-size:.9375rem;">DC BLOX brings world-class digital infrastructure and its community-first partnership model to Indianapolis.</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2019 – 2021</div><p class="lead" style="font-size:.9375rem;">Opened Birmingham, AL data center. Received first Tier III certification from the Uptime Institute. Secured $187.5M from Bain Capital & Post Road Group.</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2022 – 2023</div><p class="lead" style="font-size:.9375rem;">Opened Greenville, SC. Launched dark fiber and acquired Light Source Communications. Opened Myrtle Beach Cable Landing Station. Secured hyperscale sites in Berkeley County SC, Douglas County GA, and Rockdale County GA.</p></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-year">2024 – 2025</div><p class="lead" style="font-size:.9375rem;">Opened high-density AI data hall in Birmingham. Completed Myrtle Beach–Atlanta dark fiber route. Announced edge nodes across the Southeast. Secured $265M (2024) and $1.15B Green Loan (2025). Announced Palm Coast, FL second cable landing station.</p></div>
+        <div class="timeline-item" style="border-left:2px solid var(--accent);"><div class="timeline-dot" style="background:var(--accent);box-shadow:0 0 0 5px rgba(230,51,41,.2);"></div><div class="timeline-year" style="color:var(--accent);">Now — Indianapolis</div><p class="lead" style="font-size:.9375rem;">DC BLOX brings world-class digital infrastructure and its community-first model to Indianapolis.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===================== TEAM ===================== -->
+<!-- TEAM -->
 <section id="team" style="background:var(--navy);">
   <div class="container">
     <div class="text-center mb-12 fade-up">
       <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem;">The People Behind DC BLOX</div>
       <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;color:#fff;">A Leadership Team with Decades of Experience</h2>
-      <p style="color:rgba(255,255,255,.7);line-height:1.7;margin-top:1rem;max-width:680px;margin-left:auto;margin-right:auto;">DC BLOX is led by a team with a uniquely positioned combination of experience from the world's leading data center, telecom, and infrastructure companies. This is a team that has built and operated hundreds of megawatts of data center capacity — and they are committed to Indianapolis for the long term.</p>
+      <p style="color:rgba(255,255,255,.7);line-height:1.7;margin-top:1rem;max-width:680px;margin-left:auto;margin-right:auto;">DC BLOX is led by executives with uniquely positioned experience from the world's leading data center, telecom, and infrastructure companies — committed to Indianapolis for the long term.</p>
       <a href="https://www.dcblox.com/about" target="_blank" class="btn btn-red mt-6 inline-block">Meet the full team at dcblox.com</a>
     </div>
-
-    <!-- 
-      Team headshot images from Slide 6 of the deck.
-      Export each headshot individually and name as listed below.
-      If headshots are not extractable at high resolution, 
-      the placeholder initials will display instead.
-    -->
+    <!-- Team cards — swap src to real headshots from Slide 6 -->
     <div class="grid md:grid-cols-4 gap-5 fade-up">
-
-      <!-- Jeff Uphues -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-jeff">JU</div>
-        <img class="team-photo" id="photo-jeff" src="team-jeff-uphues.jpg" alt="Jeff Uphues" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-jeff').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">Jeff Uphues</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Executive Officer</div>
-          <p class="lead" style="font-size:.875rem;">Leads development and execution of the corporate vision. 31+ years of experience in telecommunications, data centers, and fiber infrastructure.</p>
-        </div>
-      </div>
-
-      <!-- Chris Gatch -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-chris">CG</div>
-        <img class="team-photo" id="photo-chris" src="team-chris-gatch.jpg" alt="Chris Gatch" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-chris').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">Chris Gatch</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Revenue Officer</div>
-          <p class="lead" style="font-size:.875rem;">Responsible for strategic partnerships, sales, and acquisitions. 31 years of experience in cloud services, data centers, and connectivity.</p>
-        </div>
-      </div>
-
-      <!-- Greg Carender -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-greg">GC</div>
-        <img class="team-photo" id="photo-greg" src="team-greg-carender.jpg" alt="Greg Carender" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-greg').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">Greg Carender</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Operating Officer</div>
-          <p class="lead" style="font-size:.875rem;">Responsible for engineering, construction, and operations. Has personally built over 500 MW of data center capacity. 30 years in construction and telecommunications.</p>
-        </div>
-      </div>
-
-      <!-- Kevin O'Donnell -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-kevin">KO</div>
-        <img class="team-photo" id="photo-kevin" src="team-kevin-odonnell.jpg" alt="Kevin O'Donnell" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-kevin').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">Kevin O'Donnell</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Financial Officer</div>
-          <p class="lead" style="font-size:.875rem;">Leads finance, accounting, financial planning, investor relations, and corporate administration. 26 years in data center and telecommunications.</p>
-        </div>
-      </div>
-
-      <!-- Melih Ileri -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-melih">MI</div>
-        <img class="team-photo" id="photo-melih" src="team-melih-ileri.jpg" alt="Melih Ileri" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-melih').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">Melih Ileri</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Investment Officer</div>
-          <p class="lead" style="font-size:.875rem;">Leads investment strategy including structured debt &amp; equity raises and oversees growth initiatives. 13+ years in wholesale, edge, and hyperscale data centers.</p>
-        </div>
-      </div>
-
-      <!-- John Dumler -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-john">JD</div>
-        <img class="team-photo" id="photo-john" src="team-john-dumler.jpg" alt="John Dumler" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-john').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">John Dumler</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">SVP Datacenter Design & Engineering</div>
-          <p class="lead" style="font-size:.875rem;">Responsible for design, engineering, construction, and operations of data centers. 21+ years of data center engineering and operations experience.</p>
-        </div>
-      </div>
-
-      <!-- Michael Clark -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-michael">MC</div>
-        <img class="team-photo" id="photo-michael" src="team-michael-clark.jpg" alt="Michael Clark" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-michael').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">Michael Clark</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">SVP Data Center Construction</div>
-          <p class="lead" style="font-size:.875rem;">Responsible for the data center construction team, site selection, land acquisition, and long-term capital planning. 21+ years in large commercial construction.</p>
-        </div>
-      </div>
-
-      <!-- Mark Masi -->
-      <div class="team-card">
-        <div class="team-photo-placeholder" id="placeholder-mark">MM</div>
-        <img class="team-photo" id="photo-mark" src="team-mark-masi.jpg" alt="Mark Masi" style="display:none;" onload="this.style.display='block';document.getElementById('placeholder-mark').style.display='none';" loading="lazy">
-        <div style="padding:1.25rem;">
-          <div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;color:var(--text);">Mark Masi</div>
-          <div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Development Officer</div>
-          <p class="lead" style="font-size:.875rem;">Leads land and power acquisition. 36+ years of experience in data centers and connectivity services — one of the most experienced executives in the industry.</p>
-        </div>
-      </div>
-
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+SkVGRiBVUEhVRVM8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjU1KSI+Q0VPIOKAlCBTbGlkZSA2PC90ZXh0PgogIDxyZWN0IHg9IjE0MCIgeT0iMzU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjM3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="Jeff Uphues — CEO DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">Jeff Uphues</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Executive Officer</div><p class="lead" style="font-size:.875rem;">Leads DC BLOX's corporate vision. 31+ years in telecommunications, data centers, and fiber infrastructure.</p></div></div>
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+Q0hSSVMgR0FUQ0g8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjU1KSI+Q1JPIOKAlCBTbGlkZSA2PC90ZXh0PgogIDxyZWN0IHg9IjE0MCIgeT0iMzU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjM3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="Chris Gatch — CRO DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">Chris Gatch</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Revenue Officer</div><p class="lead" style="font-size:.875rem;">Strategic partnerships, sales, and acquisitions. 31 years in cloud services, data centers, and connectivity.</p></div></div>
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+R1JFRyBDQVJFTkRFUjwvdGV4dD4KICA8dGV4dCB4PSIyMDAiIHk9IjI1OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj5DT08g4oCUIFNsaWRlIDY8L3RleHQ+CiAgPHJlY3QgeD0iMTQwIiB5PSIzNTgiIHdpZHRoPSIxMjAiIGhlaWdodD0iMjQiIHJ4PSIxMiIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC43KSIvPgogIDx0ZXh0IHg9IjIwMCIgeT0iMzc1IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI3MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+UkVQTEFDRSBXSVRIIFBIT1RPPC90ZXh0Pgo8L3N2Zz4=" alt="Greg Carender — COO DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">Greg Carender</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Operating Officer</div><p class="lead" style="font-size:.875rem;">Engineering, construction, and operations. Has built over 500 MW of data center capacity. 30 years experience.</p></div></div>
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+S0VWSU4gTydET05ORUxMPC90ZXh0PgogIDx0ZXh0IHg9IjIwMCIgeT0iMjU4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiPkNGTyDigJQgU2xpZGUgNjwvdGV4dD4KICA8cmVjdCB4PSIxNDAiIHk9IjM1OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjcpIi8+CiAgPHRleHQgeD0iMjAwIiB5PSIzNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5SRVBMQUNFIFdJVEggUEhPVE88L3RleHQ+Cjwvc3ZnPg==" alt="Kevin O'Donnell — CFO DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">Kevin O'Donnell</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Financial Officer</div><p class="lead" style="font-size:.875rem;">Finance, accounting, FP&A, investor relations. 26 years in data center and telecommunications.</p></div></div>
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+TUVMSUggSUxFUkk8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjU1KSI+Q0lPIOKAlCBTbGlkZSA2PC90ZXh0PgogIDxyZWN0IHg9IjE0MCIgeT0iMzU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjM3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="Melih Ileri — CIO DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">Melih Ileri</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Investment Officer</div><p class="lead" style="font-size:.875rem;">Investment strategy, structured debt & equity raises. 13+ years in wholesale, edge, and hyperscale data centers.</p></div></div>
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+Sk9ITiBEVU1MRVI8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyNTgiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjU1KSI+U1ZQIERlc2lnbiAmIEVuZyDigJQgU2xpZGUgNjwvdGV4dD4KICA8cmVjdCB4PSIxNDAiIHk9IjM1OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjcpIi8+CiAgPHRleHQgeD0iMjAwIiB5PSIzNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5SRVBMQUNFIFdJVEggUEhPVE88L3RleHQ+Cjwvc3ZnPg==" alt="John Dumler — SVP Design DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">John Dumler</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">SVP Design & Engineering</div><p class="lead" style="font-size:.875rem;">Design, engineering, construction, and operations of data centers. 21+ years of data center engineering.</p></div></div>
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+TUlDSEFFTCBDTEFSSzwvdGV4dD4KICA8dGV4dCB4PSIyMDAiIHk9IjI1OCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj5TVlAgQ29uc3RydWN0aW9uIOKAlCBTbGlkZSA2PC90ZXh0PgogIDxyZWN0IHg9IjE0MCIgeT0iMzU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjM3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="Michael Clark — SVP Construction DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">Michael Clark</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">SVP Data Center Construction</div><p class="lead" style="font-size:.875rem;">Construction team, site selection, land acquisition, capital planning. 21+ years large commercial construction.</p></div></div>
+      <div class="team-card"><img class="team-photo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiB2aWV3Qm94PSIwIDAgNDAwIDQwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWEwYTJlO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMyZDFhNGE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMTk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI0MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMTk4IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iMjAwIiBjeT0iMTcwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIyMDAiIHk9IjE4NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfkaQ8L3RleHQ+CiAgPHRleHQgeD0iMjAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+TUFSSyBNQVNJPC90ZXh0PgogIDx0ZXh0IHg9IjIwMCIgeT0iMjU4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiPkNETyDigJQgU2xpZGUgNjwvdGV4dD4KICA8cmVjdCB4PSIxNDAiIHk9IjM1OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjcpIi8+CiAgPHRleHQgeD0iMjAwIiB5PSIzNzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5SRVBMQUNFIFdJVEggUEhPVE88L3RleHQ+Cjwvc3ZnPg==" alt="Mark Masi — CDO DC BLOX" loading="lazy"><div style="padding:1.25rem;"><div style="font-weight:900;font-size:1.125rem;font-family:'Barlow Condensed',sans-serif;">Mark Masi</div><div style="font-size:.8125rem;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.06em;margin-bottom:.5rem;">Chief Development Officer</div><p class="lead" style="font-size:.875rem;">Leads land and power acquisition. 36+ years in data centers and connectivity — one of the most experienced executives in the industry.</p></div></div>
     </div>
-
-    <!-- Companies they've worked at (from Slide 6 logos) -->
     <div class="fade-up mt-12 text-center">
-      <p style="font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:1rem;">Uniquely Positioned Combination of Previous Experience From</p>
-      <p style="color:rgba(255,255,255,.5);font-size:.9375rem;line-height:1.8;">Digital Realty · EdgeConneX · Cbeyond · C Spire · Frontier Communications · Intermedia · Adani Connex · Google · Sungard · Bandwidth · Ciena · AchieveIt · PwC · Infrapoint · EarthLink · FiberNet · Lucent Technologies · Liquid Web · Meta · Ascend</p>
+      <p style="font-size:.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);margin-bottom:.75rem;">Uniquely Positioned Combination of Experience From</p>
+      <p style="color:rgba(255,255,255,.45);font-size:.9375rem;line-height:1.8;">Digital Realty · EdgeConneX · Cbeyond · C Spire · Frontier Communications · Intermedia · Adani Connex · Google · Sungard · Bandwidth · Ciena · AchieveIt · PwC · Infrapoint · EarthLink · FiberNet · Lucent Technologies · Liquid Web · Meta · Ascend</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== PROJECT OVERVIEW ===================== -->
+<!-- PROJECT OVERVIEW -->
 <section id="project-overview" class="container">
   <div class="fade-up">
     <div class="section-eyebrow">Indianapolis Campus</div>
     <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">DC BLOX Indianapolis — Project Details</h2>
-    <p class="lead mt-3 max-w-3xl">A phased data center campus bringing world-class digital infrastructure to Indianapolis, starting with a Phase I design proven at DC BLOX's existing Rockdale County, GA facility.</p>
+    <p class="lead mt-3 max-w-3xl">A phased data center campus bringing world-class digital infrastructure to Indianapolis, starting with a Phase I design proven at DC BLOX's Rockdale County, GA facility.</p>
   </div>
   <div class="grid md:grid-cols-3 gap-6 mt-12 fade-up">
-    <div class="pro-card p-7" style="border-top:4px solid var(--accent);">
-      <div class="phase-badge">Phase I</div>
-      <h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">10 MW Building</h3>
-      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Floor Plate / Total</span><span style="font-weight:700;font-size:.875rem;">80,337 SF</span></li>
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Stories</span><span style="font-weight:700;font-size:.875rem;">1-Story</span></li>
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">22 FT</span></li>
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Cooling</span><span style="font-weight:700;font-size:.875rem;color:#065f46;">DX Waterless</span></li>
-        <li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Site Area</span><span style="font-weight:700;font-size:.875rem;">~22.6 Acres</span></li>
-      </ul>
-      <p class="lead mt-3" style="font-size:.9375rem;">Replica of DC BLOX's proven Rockdale County, GA facility. 77 total parking spaces, storm pond, and designated primary + secondary site access.</p>
-    </div>
-    <div class="pro-card p-7" style="border-top:4px solid var(--navy);">
-      <div class="phase-badge" style="background:var(--navy);">Phase II — Bldg A</div>
-      <h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">20 MW Building</h3>
-      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Floor Plate</span><span style="font-weight:700;font-size:.875rem;">71,076 SF</span></li>
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Total Area</span><span style="font-weight:700;font-size:.875rem;">142,152 SF</span></li>
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Stories</span><span style="font-weight:700;font-size:.875rem;">2-Story</span></li>
-        <li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">56 FT</span></li>
-      </ul>
-      <p class="lead mt-3" style="font-size:.9375rem;">Hybrid air/closed-loop water system. Recirculates water — no additional utility water after initial prime. No waste water expelled.</p>
-    </div>
-    <div class="pro-card p-7" style="border-top:4px solid #1e40af;">
-      <div class="phase-badge" style="background:#1e40af;">Phase II — Bldg B</div>
-      <h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">48 MW Building</h3>
-      <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;">
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">1st Floor Plate</span><span style="font-weight:700;font-size:.875rem;">133,748 SF</span></li>
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">2nd Floor Plate</span><span style="font-weight:700;font-size:.875rem;">60,960 SF</span></li>
-        <li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Total Area</span><span style="font-weight:700;font-size:.875rem;">194,708 SF</span></li>
-        <li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">56 FT</span></li>
-      </ul>
-      <p class="lead mt-3" style="font-size:.9375rem;">Largest building on the campus. Full Phase II includes 195 total parking stalls and a primary entrance with guard house and rejection lane.</p>
-    </div>
+    <div class="pro-card p-7" style="border-top:4px solid var(--accent);"><div class="phase-badge">Phase I</div><h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">10 MW Building</h3><ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;"><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Floor Plate / Total</span><span style="font-weight:700;font-size:.875rem;">80,337 SF</span></li><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Stories</span><span style="font-weight:700;font-size:.875rem;">1-Story</span></li><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">22 FT</span></li><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Cooling</span><span style="font-weight:700;font-size:.875rem;color:#065f46;">DX Waterless</span></li><li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Site Area</span><span style="font-weight:700;font-size:.875rem;">~22.6 Acres</span></li></ul><p class="lead mt-3" style="font-size:.9375rem;">Replica of DC BLOX's operating Rockdale County, GA facility. 77 total parking spaces, storm pond, primary and secondary site access.</p></div>
+    <div class="pro-card p-7" style="border-top:4px solid var(--navy);"><div class="phase-badge" style="background:var(--navy);">Phase II — Bldg A</div><h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">20 MW Building</h3><ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;"><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Floor Plate</span><span style="font-weight:700;font-size:.875rem;">71,076 SF</span></li><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Total Area</span><span style="font-weight:700;font-size:.875rem;">142,152 SF</span></li><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Stories</span><span style="font-weight:700;font-size:.875rem;">2-Story</span></li><li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">56 FT</span></li></ul><p class="lead mt-3" style="font-size:.9375rem;">Hybrid air/closed-loop water system. Recirculates water — no additional utility water after initial prime, no waste expelled.</p></div>
+    <div class="pro-card p-7" style="border-top:4px solid #1e40af;"><div class="phase-badge" style="background:#1e40af;">Phase II — Bldg B</div><h3 style="font-weight:900;font-size:1.375rem;font-family:'Barlow Condensed',sans-serif;margin-bottom:.75rem;">48 MW Building</h3><ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem;"><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">1st Floor Plate</span><span style="font-weight:700;font-size:.875rem;">133,748 SF</span></li><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">2nd Floor Plate</span><span style="font-weight:700;font-size:.875rem;">60,960 SF</span></li><li style="display:flex;justify-content:space-between;border-bottom:1px solid #f3f4f6;padding-bottom:.4rem;"><span style="color:var(--muted);font-size:.875rem;">Total Area</span><span style="font-weight:700;font-size:.875rem;">194,708 SF</span></li><li style="display:flex;justify-content:space-between;"><span style="color:var(--muted);font-size:.875rem;">Height</span><span style="font-weight:700;font-size:.875rem;">56 FT</span></li></ul><p class="lead mt-3" style="font-size:.9375rem;">Largest building on the campus. Full Phase II includes 195 total parking stalls and a primary entrance with guard house and rejection lane.</p></div>
   </div>
-  <div class="mt-10 pro-card p-10 fade-up">
-    <div class="grid md:grid-cols-2 gap-8">
-      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Site Design</h4><p class="lead">Storm pond stormwater management, 100-foot rear yard setback, 30-foot side yard setback, loading dock, equipment yard, and designated primary and secondary site entrances. Existing utility and access easements are respected throughout.</p></div>
-      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Proven Design</h4><p class="lead">Phase I is a replica of DC BLOX's Rockdale County, GA facility — already operating successfully. Indianapolis benefits from a tested design with no unknowns on construction or performance.</p></div>
-      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Fiber Connectivity</h4><p class="lead">The campus connects to DC BLOX's regional dark fiber network linking Indianapolis to Atlanta, Nashville, Chattanooga, Huntsville, Birmingham, Greenville, and onward to international cable landing stations at Myrtle Beach.</p></div>
-      <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Why Indianapolis?</h4><p class="lead">Indiana's stable business climate, strong utility infrastructure, skilled workforce, and central U.S. location make it ideal for digital infrastructure. Indianapolis offers excellent logistics access and the land area needed for a properly designed, low-impact campus.</p></div>
-    </div>
-  </div>
+  <div class="mt-10 pro-card p-10 fade-up"><div class="grid md:grid-cols-2 gap-8">
+    <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Site Design</h4><p class="lead">Storm pond stormwater management, 100-foot rear yard setback, 30-foot side yard setback, loading dock, equipment yard, and primary + secondary site entrances. Existing utility easements respected throughout.</p></div>
+    <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Proven Design</h4><p class="lead">Phase I is a replica of DC BLOX's Rockdale County, GA facility — already operating successfully. Indianapolis benefits from a tested design with no unknowns on construction or performance.</p></div>
+    <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Fiber Connectivity</h4><p class="lead">The campus connects to DC BLOX's regional dark fiber network linking Indianapolis to Atlanta, Nashville, Chattanooga, Huntsville, Birmingham, Greenville, and onward to international cable landing stations.</p></div>
+    <div><h4 style="font-weight:800;font-size:1.125rem;margin-bottom:.75rem;">Why Indianapolis?</h4><p class="lead">Indiana's stable business climate, strong utility infrastructure, skilled workforce, and central U.S. location make it ideal for digital infrastructure investment.</p></div>
+  </div></div>
 </section>
 
-<!-- ===================== COMMUNITY ===================== -->
+<!-- COMMUNITY -->
 <section id="community" style="background:#f9fafb;">
   <div class="container">
     <div class="fade-up">
       <div class="section-eyebrow">Our Commitment</div>
       <h2 class="headline" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">Our Partnership with Indianapolis</h2>
-      <p class="lead mt-4 max-w-3xl" style="font-size:1.0625rem;">Community engagement is one of DC BLOX's four core mission statements: <em>"Help bring about meaningful change in the communities we serve."</em> This isn't just words — DC BLOX has a decade-long track record of community investment in every market it enters.</p>
+      <p class="lead mt-4 max-w-3xl" style="font-size:1.0625rem;">Community engagement is one of DC BLOX's four core mission statements: <em>"Help bring about meaningful change in the communities we serve."</em> DC BLOX has a decade-long track record of community investment in every market it enters.</p>
     </div>
-
-    <!-- Community engagement images from Slide 24 -->
+    <!-- Community images from Slide 24 — swap src to real photos -->
     <div class="grid md:grid-cols-3 gap-5 mt-12 fade-up">
-      <div>
-        <!-- community-sponsorship.jpg: Slide 24 — DC BLOX team presenting charitable donation check -->
-        <div class="community-img-wrap">
-          <img src="community-sponsorship.jpg" alt="DC BLOX team presenting community sponsorship donation" loading="lazy">
-        </div>
-        <div style="margin-top:.75rem;">
-          <div style="font-weight:800;font-size:1rem;margin-bottom:.25rem;">Sponsorships</div>
-          <p class="lead" style="font-size:.9375rem;">Charitable donations, local event support, and partnerships with organizations that matter to the communities DC BLOX serves.</p>
-        </div>
-      </div>
-      <div>
-        <!-- community-volunteering.jpg: Slide 24 — DC BLOX staff volunteering at food bank -->
-        <div class="community-img-wrap">
-          <img src="community-volunteering.jpg" alt="DC BLOX staff volunteering at local charity" loading="lazy">
-        </div>
-        <div style="margin-top:.75rem;">
-          <div style="font-weight:800;font-size:1rem;margin-bottom:.25rem;">Volunteering</div>
-          <p class="lead" style="font-size:.9375rem;">DC BLOX staff actively volunteers with local charities, partner organizations, and schools in every community it operates in.</p>
-        </div>
-      </div>
-      <div>
-        <!-- community-education.jpg: Slide 24 — students touring a DC BLOX data center -->
-        <div class="community-img-wrap">
-          <img src="community-education.jpg" alt="Students touring DC BLOX data center for education" loading="lazy">
-        </div>
-        <div style="margin-top:.75rem;">
-          <div style="font-weight:800;font-size:1rem;margin-bottom:.25rem;">Education</div>
-          <p class="lead" style="font-size:.9375rem;">Facility tours, career development programs, and tech education partnerships — inspiring the next generation of Indianapolis digital infrastructure professionals.</p>
-        </div>
-      </div>
+      <div><div class="community-img-wrap"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMDY1ZjQ2O3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTNhMmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfpJ08L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+Q09NTVVOSVRZIFNQT05TT1JTSElQUzwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjMwOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEzIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNTUpIj5UZWFtIERvbmF0aW9uIFBob3RvIOKAlCBTbGlkZSAyNDwvdGV4dD4KICA8cmVjdCB4PSIzNDAiIHk9IjQ1OCIgd2lkdGg9IjEyMCIgaGVpZ2h0PSIyNCIgcng9IjEyIiBmaWxsPSJyZ2JhKDIzMCw1MSw0MSwwLjcpIi8+CiAgPHRleHQgeD0iNDAwIiB5PSI0NzUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9IjcwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIxIj5SRVBMQUNFIFdJVEggUEhPVE88L3RleHQ+Cjwvc3ZnPg==" alt="DC BLOX community sponsorship" loading="lazy"></div><div style="margin-top:.75rem;"><div style="font-weight:800;font-size:1rem;margin-bottom:.25rem;">Sponsorships</div><p class="lead" style="font-size:.9375rem;">Charitable donations, local event support, and partnerships with organizations that matter to the communities DC BLOX serves.</p></div></div>
+      <div><div class="community-img-wrap"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojYjQ1MzA5O3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTBhMmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfmYs8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+Vk9MVU5URUVSSU5HPC90ZXh0PgogIDx0ZXh0IHg9IjQwMCIgeT0iMzA4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiPlN0YWZmIGF0IExvY2FsIENoYXJpdHkg4oCUIFNsaWRlIDI0PC90ZXh0PgogIDxyZWN0IHg9IjM0MCIgeT0iNDU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjQ3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="DC BLOX staff volunteering" loading="lazy"></div><div style="margin-top:.75rem;"><div style="font-weight:800;font-size:1rem;margin-bottom:.25rem;">Volunteering</div><p class="lead" style="font-size:.9375rem;">DC BLOX staff actively volunteers with local charities, partner organizations, and schools in every community it operates in.</p></div></div>
+      <div><div class="community-img-wrap"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiB2aWV3Qm94PSIwIDAgODAwIDUwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMWU0MGFmO3N0b3Atb3BhY2l0eToxIiAvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMxYTBhMmU7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CiAgICAgIDxwYXRoIGQ9Ik0gNDAgMCBMIDAgMCAwIDQwIiBmaWxsPSJub25lIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4wNikiIHN0cm9rZS13aWR0aD0iMSIvPgogICAgPC9wYXR0ZXJuPgogIDwvZGVmcz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0idXJsKCNnKSIvPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTAwIiBmaWxsPSJ1cmwoI2dyaWQpIi8+CiAgPHJlY3QgeD0iMzk4IiB5PSIwIiB3aWR0aD0iNCIgaGVpZ2h0PSI1MDAiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPHJlY3QgeD0iMCIgeT0iMjQ4IiB3aWR0aD0iODAwIiBoZWlnaHQ9IjQiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuMTUpIi8+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMjIwIiByPSI0MCIgZmlsbD0icmdiYSgyMzAsNTEsNDEsMC4yKSIgc3Ryb2tlPSJyZ2JhKDIzMCw1MSw0MSwwLjQpIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjIzNSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJyZ2JhKDI1NSwyNTUsMjU1LDAuNykiPvCfjpM8L3RleHQ+CiAgPHRleHQgeD0iNDAwIiB5PSIyODAiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSI5MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IndoaXRlIiBsZXR0ZXItc3BhY2luZz0iMSI+RURVQ0FUSU9OPC90ZXh0PgogIDx0ZXh0IHg9IjQwMCIgeT0iMzA4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC41NSkiPlN0dWRlbnRzIFRvdXJpbmcgRmFjaWxpdHkg4oCUIFNsaWRlIDI0PC90ZXh0PgogIDxyZWN0IHg9IjM0MCIgeT0iNDU4IiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI0IiByeD0iMTIiIGZpbGw9InJnYmEoMjMwLDUxLDQxLDAuNykiLz4KICA8dGV4dCB4PSI0MDAiIHk9IjQ3NSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iNzAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9IjEiPlJFUExBQ0UgV0lUSCBQSE9UTzwvdGV4dD4KPC9zdmc+" alt="DC BLOX education programs" loading="lazy"></div><div style="margin-top:.75rem;"><div style="font-weight:800;font-size:1rem;margin-bottom:.25rem;">Education</div><p class="lead" style="font-size:.9375rem;">Facility tours, career development programs, and tech education partnerships — inspiring Indianapolis students toward digital infrastructure careers.</p></div></div>
     </div>
-
     <div class="grid md:grid-cols-4 gap-5 mt-12 fade-up">
       <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🤝</div><h4 style="font-weight:800;margin-bottom:.5rem;">Sponsorships</h4><p class="lead" style="font-size:.9375rem;">Charitable donations, local event support, and community organization partnerships.</p></div>
       <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🙋</div><h4 style="font-weight:800;margin-bottom:.5rem;">Volunteering</h4><p class="lead" style="font-size:.9375rem;">DC BLOX staff volunteers with local charities, partners, and schools in every market.</p></div>
       <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🎓</div><h4 style="font-weight:800;margin-bottom:.5rem;">Education</h4><p class="lead" style="font-size:.9375rem;">Facility tours, career development programs, and tech education for Indianapolis students.</p></div>
-      <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🏛️</div><h4 style="font-weight:800;margin-bottom:.5rem;">Participation</h4><p class="lead" style="font-size:.9375rem;">Active involvement with local chamber, community events, and town hall meetings.</p></div>
+      <div class="pro-card p-6 text-center"><div style="font-size:2.5rem;margin-bottom:.75rem;">🏛️</div><h4 style="font-weight:800;margin-bottom:.5rem;">Participation</h4><p class="lead" style="font-size:.9375rem;">Local chamber, community events, and town hall meetings — resident input shapes better outcomes.</p></div>
     </div>
-
     <div class="mt-16 fade-up" style="background:var(--navy);border-radius:var(--radius);padding:3rem;text-align:center;">
       <div style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:1rem;">DC BLOX Mission</div>
       <h3 class="headline" style="font-size:clamp(1.75rem,4vw,2.75rem);font-weight:900;color:#fff;">Help Bring About Meaningful Change<br>In the Communities We Serve.</h3>
-      <p style="color:rgba(255,255,255,.65);margin-top:1rem;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;">This isn't just a real estate project. It's a long-term commitment to Indianapolis — measured not only by operational performance, but by the lasting positive impact we create for the people who live and work here.</p>
+      <p style="color:rgba(255,255,255,.65);margin-top:1rem;max-width:640px;margin-left:auto;margin-right:auto;line-height:1.7;">A long-term commitment to Indianapolis — measured not only by operational performance, but by the lasting positive impact we create for the people who live and work here.</p>
       <a href="https://www.dcblox.com" target="_blank" class="btn btn-red mt-6 inline-block">Learn more at dcblox.com</a>
     </div>
   </div>
 </section>
 
-<!-- ===================== FAQ ===================== -->
+<!-- FAQ -->
 <section id="faq" class="container">
   <h2 class="headline fade-up" style="font-size:clamp(2rem,4vw,3.25rem);font-weight:900;">Frequently Asked Questions</h2>
   <p class="lead mt-3 max-w-3xl fade-up">Questions from Indianapolis residents and neighbors, answered directly. Don't see yours? Reach out — we respond within five business days.</p>
   <div class="mt-10">
-    <div class="faq-item"><div class="faq-q">Will my electric or water utility bills increase because of this project?<span>+</span></div><div class="faq-a lead">No. DC BLOX's rate structure directly covers all incremental interconnection costs for the additional power needed. Adding data center load can actually put downward pressure on rates by adding MWh to the revenue requirement used to set rates for all customers. AES Indiana has publicly committed to the public utilities commission not to charge regular ratepayers for the costs of supporting increased data center demand.<br><br>For water: Phase I uses a DX waterless cooling system — no utility water consumed. Phase II's larger buildings use a closed-loop system that recirculates water with no additional utility draw after initial prime. See the <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" style="font-weight:700;text-decoration:underline;">AES Indiana public statement</a>.</div></div>
-    <div class="faq-item"><div class="faq-q">How does the cooling system work and how much water does it use?<span>+</span></div><div class="faq-a lead"><strong>Phase I (10 MW building):</strong> Uses a DX waterless cooling system — no utility water consumed in normal operations whatsoever.<br><br><strong>Phase II (20 MW and 48 MW buildings):</strong> Uses a hybrid air/closed-loop water system. The system recirculates water internally. Once initially primed, no additional utility water is required and no waste water is expelled into the environment. Far more water-efficient than a typical industrial or warehouse facility on the same site.</div></div>
-    <div class="faq-item"><div class="faq-q">Are there any health or environmental risks from living near a data center?<span>+</span></div><div class="faq-a lead">No. Data centers use no hazardous materials and produce no environmental waste. Diesel backup generators run only when utility power is unavailable and for brief monthly testing — not enough to impact local air quality. Data centers may emit minor electromagnetic fields (EMFs), but concrete walls substantially reduce those emissions. The remaining EMFs are comparable to a typical office building.</div></div>
-    <div class="faq-item"><div class="faq-q">Will this increase traffic in the neighborhood?<span>+</span></div><div class="faq-a lead">No. Data centers are low-traffic operations by nature. A small on-site team works in shifts. There is no large daily workforce commuting, no retail customers, and no constant freight truck activity. Traffic is limited to employees, occasional equipment deliveries, and maintenance — all using designated site access routes.</div></div>
-    <div class="faq-item"><div class="faq-q">What about noise from generators and cooling equipment?<span>+</span></div><div class="faq-a lead">All mechanical equipment is enclosed within buildings. Backup generators run only during utility outages and brief monthly tests — not during normal daily operations. Day-to-day operations are quiet by nature and significantly less disruptive than a typical industrial, warehouse, or distribution facility.</div></div>
-    <div class="faq-item"><div class="faq-q">How many jobs will this create for Indianapolis?<span>+</span></div><div class="faq-a lead"><strong>Construction:</strong> Hundreds of skilled workers — electricians, HVAC technicians, contractors, and tradespeople — over a multi-year build. DC BLOX prioritizes local contractors wherever possible.<br><br><strong>Permanent operations:</strong> Data center technicians, network engineers, facilities managers, security, and support staff — specialized positions paying wages well above county averages.<br><br><strong>Indirect jobs:</strong> Every direct data center job creates approximately 6 additional jobs in the local economy. (Source: PwC)</div></div>
-    <div class="faq-item"><div class="faq-q">How does this project benefit Indianapolis residents specifically?<span>+</span></div><div class="faq-a lead">Substantial tax revenues reduce the burden on residents and fund better schools, police and security, local infrastructure, hospitals, and libraries. Local employment — direct and indirect — keeps wages and spending in Indianapolis. New fiber connectivity built to support the campus can improve broadband access for businesses and underserved communities. Long-term, this is a stable, recession-resistant addition to the local tax base for decades.</div></div>
-    <div class="faq-item"><div class="faq-q">Is DC BLOX a credible, long-term partner for Indianapolis?<span>+</span></div><div class="faq-a lead">Yes. DC BLOX was founded in 2014 and has been operating data centers across the Southeast for over a decade. The company has raised over $1.4 billion in institutional capital backed by Bain Capital and Post Road Group, and has a demonstrated track record of community investment in every market it enters. Data centers are permanent infrastructure — physically anchored to their site. This is a multi-decade commitment to Indianapolis. <a href="https://www.dcblox.com" target="_blank" style="font-weight:700;text-decoration:underline;">Learn more at dcblox.com →</a></div></div>
-    <div class="faq-item"><div class="faq-q">Who can I contact with additional questions?<span>+</span></div><div class="faq-a lead">We genuinely welcome every question, concern, and suggestion. Please use the <a href="#contact" style="font-weight:700;text-decoration:underline;">contact form below</a> to reach our community team. We are committed to responding to every inquiry within five business days.</div></div>
+    <div class="faq-item"><div class="faq-q">Will my electric or water utility bills increase because of this project?<span>+</span></div><div class="faq-a lead">No. DC BLOX's rate structure covers all incremental interconnection costs for the additional power needed. Adding data center load can actually put downward pressure on rates by adding MWh to the revenue requirement used to set rates for all customers. AES Indiana has publicly committed to not charging regular ratepayers for costs of supporting data center demand.<br><br>For water: Phase I uses a DX waterless system — no utility water consumed. Phase II uses a closed-loop system that recirculates water with no additional utility draw after initial prime. See the <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" style="font-weight:700;text-decoration:underline;">AES Indiana statement</a>.</div></div>
+    <div class="faq-item"><div class="faq-q">How does the cooling system work and how much water does it use?<span>+</span></div><div class="faq-a lead"><strong>Phase I:</strong> DX waterless cooling system — zero utility water consumed in normal operations.<br><br><strong>Phase II buildings:</strong> Hybrid air/closed-loop water system. Recirculates water internally — once primed, no additional utility water required and no waste water expelled. Far more water-efficient than a typical industrial or warehouse facility.</div></div>
+    <div class="faq-item"><div class="faq-q">Are there any health or environmental risks from living near a data center?<span>+</span></div><div class="faq-a lead">No. Data centers use no hazardous materials and produce no environmental waste. Generators run only for backup power and brief monthly tests — not enough to impact local air quality. Electromagnetic fields (EMFs) are reduced by concrete walls to levels comparable to a typical office building.</div></div>
+    <div class="faq-item"><div class="faq-q">Will this increase traffic in the neighborhood?<span>+</span></div><div class="faq-a lead">No. A small on-site team works in shifts. No large daily workforce commuting, no retail customers, no constant freight trucks. Traffic is limited to employees, occasional equipment deliveries, and maintenance — all using designated site access routes.</div></div>
+    <div class="faq-item"><div class="faq-q">What about noise from generators and cooling equipment?<span>+</span></div><div class="faq-a lead">All mechanical equipment is enclosed within buildings. Generators run only during utility outages and brief monthly tests. Day-to-day operations are quiet by nature — significantly less disruptive than a typical industrial or warehouse facility.</div></div>
+    <div class="faq-item"><div class="faq-q">How many jobs will this create for Indianapolis?<span>+</span></div><div class="faq-a lead"><strong>Construction:</strong> Hundreds of skilled workers over a multi-year build. DC BLOX prioritizes local contractors wherever possible.<br><br><strong>Permanent operations:</strong> Data center technicians, network engineers, facilities managers, security, and support staff — all paying well above county averages.<br><br><strong>Indirect jobs:</strong> Every direct data center job creates approximately 6 additional local jobs. (Source: PwC)</div></div>
+    <div class="faq-item"><div class="faq-q">How does this benefit Indianapolis residents specifically?<span>+</span></div><div class="faq-a lead">Substantial tax revenues fund better schools, police and security, local infrastructure, hospitals, and libraries. Employment — direct and indirect — keeps wages and spending in Indianapolis. New fiber connectivity can improve broadband access for businesses and underserved communities. Long-term, this is a stable, recession-resistant addition to the local tax base for decades.</div></div>
+    <div class="faq-item"><div class="faq-q">Is DC BLOX a credible, long-term partner for Indianapolis?<span>+</span></div><div class="faq-a lead">Yes. DC BLOX was founded in 2014 and has operated data centers across the Southeast for over a decade. Over $1.4 billion in institutional capital raised, backed by Bain Capital and Post Road Group, with a demonstrated community investment track record in every market it enters. Data centers are permanent infrastructure — a multi-decade commitment to Indianapolis. <a href="https://www.dcblox.com" target="_blank" style="font-weight:700;text-decoration:underline;">Learn more at dcblox.com →</a></div></div>
+    <div class="faq-item"><div class="faq-q">Who can I contact with additional questions?<span>+</span></div><div class="faq-a lead">Please use the <a href="#contact" style="font-weight:700;text-decoration:underline;">contact form below</a>. We respond to every inquiry within five business days.</div></div>
   </div>
 </section>
 
-<!-- ===================== CONTACT ===================== -->
+<!-- CONTACT -->
 <section id="contact" style="background:#f9fafb;">
   <div class="container">
     <div class="pro-card p-10 fade-up" style="max-width:760px;margin:0 auto;">
       <div class="section-eyebrow text-center">Get In Touch</div>
       <h2 class="headline text-center" style="font-size:clamp(1.75rem,3vw,2.75rem);font-weight:900;">We Want to Hear from You</h2>
-      <p class="lead mt-3 text-center max-w-2xl mx-auto">Questions, concerns, ideas, or feedback — we want to hear all of it. This project will be part of Indianapolis for decades to come, and we're committed to getting it right together with the community.</p>
+      <p class="lead mt-3 text-center max-w-2xl mx-auto">Questions, concerns, ideas, or feedback — we want to hear all of it. This project will be part of Indianapolis for decades, and we're committed to getting it right together with the community.</p>
       <form class="mt-10" action="https://formspree.io/f/your-form-id" method="POST">
         <div style="margin-bottom:1.25rem;"><label style="display:block;font-weight:700;margin-bottom:.5rem;font-size:.9375rem;">Name</label><input class="form-input" type="text" name="name" required placeholder="Your name"></div>
         <div style="margin-bottom:1.25rem;"><label style="display:block;font-weight:700;margin-bottom:.5rem;font-size:.9375rem;">Email</label><input class="form-input" type="email" name="email" required placeholder="your@email.com"></div>
@@ -736,7 +439,6 @@
   </div>
 </section>
 
-<!-- ===================== FOOTER ===================== -->
 <footer>
   <div class="container">
     <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
@@ -750,7 +452,7 @@
       <a href="https://www.aesindiana.com/press-release/supporting-growth-central-indiana-transparency-and-commitment-0" target="_blank" style="color:rgba(255,255,255,.6);text-decoration:underline;font-size:.875rem;">AES Indiana Rate Statement</a>
     </div>
     <div style="font-size:.875rem;color:rgba(255,255,255,.5);">© <span id="year"></span> DC BLOX. All rights reserved.</div>
-    <div style="font-size:.75rem;color:rgba(255,255,255,.35);margin-top:1.5rem;max-width:800px;line-height:1.7;">AES Indiana rate impact information sourced from AES Indiana's official public statement, September 19, 2025. Building specifications sourced from DC BLOX Indianapolis project documents. Job multiplier figure (6×) sourced from PwC data center industry research. Additional economic impact data from CBRE, U.S. Chamber of Commerce, and Federal Reserve Bank of Richmond.</div>
+    <div style="font-size:.75rem;color:rgba(255,255,255,.35);margin-top:1.5rem;max-width:800px;line-height:1.7;">AES Indiana rate impact information sourced from AES Indiana official public statement, September 19, 2025. Building specifications from DC BLOX Indianapolis project documents. Job multiplier (6×) from PwC data center industry research. Additional data from CBRE, U.S. Chamber of Commerce, and Federal Reserve Bank of Richmond.</div>
   </div>
 </footer>
 
